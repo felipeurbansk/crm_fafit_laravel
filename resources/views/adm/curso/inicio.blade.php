@@ -1,4 +1,4 @@
-@extends('adm.master')
+@extends('layouts.master')
 
 @section('content')
 <div class="row-fluid">
@@ -19,7 +19,7 @@
 							<th width="22%">Descrição</th>
 							<th width="10%">Duração</th>
 							<th width="10%">Carga Horaria</th>
-							<th width="10%">Imagem</th>
+							<th width="10%">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -63,8 +63,4 @@
 		</div>
 	</div>
 </div>
-
-<link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
-<script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
-<script type="text/javascript">
 @endsection

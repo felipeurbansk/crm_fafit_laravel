@@ -1,4 +1,4 @@
-@extends('adm.master')
+@extends('layouts.master')
 
 @section('content')
 
@@ -58,7 +58,4 @@
 	</div>
 </div>
 
-<link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
-<script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
-<script type="text/javascript">
 @endsection

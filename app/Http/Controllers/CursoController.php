@@ -20,4 +20,10 @@ class CursoController extends Controller
       Curso::create($curso);
       return redirect()->route('adm.curso');
     }
+
+    public function exibir(){
+      $cursos = Curso::all();
+
+      return view('adm.inicio',compact('cursos'));
+    }
 }

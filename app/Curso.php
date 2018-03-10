@@ -15,5 +15,5 @@ class Curso extends Model
     public function disciplinas(){
       return $this->belongsToMany('App\Disciplina','cursos_has_disciplinas','cursos_id','disciplinas_id');
     }
+
 }
-  

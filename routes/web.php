@@ -14,22 +14,28 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Rotas de usuario*/
+Route::get('/logout',['as' => 'login.logout','uses' => 'Login\LoginController@sair']);
+/*Fim rotas de usuario*/
+
+Route::group(['middleware' => 'auth'],function(){
+
 /*Rota de inicio*/
-Route::get('/adm',function(){
-  return view('adm.inicio');
-});
+Route::get('/home',['as' => 'inicio','uses'=>'CursoController@exibir']);
 /*Fim rotas de inicio*/
 
 /*Rotas dos Cursos*/
 Route::get('/adm/curso',['as'=>'adm.curso','uses'=>'CursoController@index']);
+Route::get('/adm/curso/exibir',['as'=>'adm.curso.exibir','uses'=>'CursoController@exibir']);
 Route::get('/adm/curso/cadastro',['as'=>'adm.curso.cadastro','uses'=>'CursoController@cadastro']);
 Route::post('/adm/curso/salvar',['as'=> 'adm.curso.salvar','uses'=>'CursoController@salvar']);
 /*Fim rotas dos Cursos*/
 
 /*Rotas dos Professores*/
-Route::get('/adm/professor',['as'=>'adm.professor','uses'=>'ProfessorController@index']);
-Route::get('/adm/professor/cadastro', ['as'=>'adm.professor.cadastro','uses'=>'ProfessorController@cadastro']);
-Route::get('/adm/professor/salvar', ['as'=>'adm.professor.salvar','uses'=>'ProfessorController@salvar']);
+Route::get('/adm/professor',['as'=>'adm.professor','uses'=>'ProfessoreController@index']);
+Route::get('/adm/professor/cadastro', ['as'=>'adm.professor.cadastro','uses'=>'ProfessoreController@cadastro']);
+Route::get('/adm/professor/salvar', ['as'=>'adm.professor.salvar','uses'=>'ProfessoreController@salvar']);
 /*Fim rotas dos Professores*/
 
 /*Rotas das Noticias*/
@@ -50,7 +56,7 @@ Route::get('/adm/calendario/cadastro',['as'=>'adm.calendario.cadastro','uses'=>'
 Route::get('/adm/calendario/salvar',['as'=>'adm.calendario.salvar','uses'=>'CalendarioController@salvar']);
 /*Fim rotas dos Calendario*/
 
-
+});
 
 /*Rotas para testes*/
 Route::get('/teste',function(){
@@ -59,3 +65,10 @@ Route::get('/teste',function(){
   dd($curso->disciplinas);
 });
 /*Fim das rotas de testes*/
+
+Auth::routes();
+/*
+Route::get('/home', function(){
+  r
+});
+*/

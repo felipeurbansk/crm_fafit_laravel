@@ -13,5 +13,8 @@ class ProfessoreController extends Controller
     public function cadastro(){
       return view('adm.professor.form');
     }
+    public function disciplinas(){
+      return $this->hasMany('App\Disciplina');
+    }
 
 }

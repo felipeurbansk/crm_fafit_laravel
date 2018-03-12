@@ -11,18 +11,19 @@
 			</div>
 			<div class="widget-body">
 
-				<form action="" method="post" class="form-horizontal">
+				<form action="{{route('adm.cpa.salvar')}}" method="post" class="form-horizontal"enctype="multipart/form-data">
+					{{csrf_field()}}
 				<div class="control-group ">
-            <label class="control-label" for="ed_nome">Nome:</label>
+            <label class="control-label" for="nome">Nome:</label>
             <div class="controls">
-                <input type="text" class="span6" name="ed_nome" id="ed_nome" value=""/>
+                <input type="text" class="span6" name="nome" id="nome" value=""/>
                 <span class="help-inline"></span>
             </div>
         </div>
 				<div class="control-group ">
-              <label class="control-label" for="ed_cargo">Cargo:</label>
+              <label class="control-label" for="cargos">Cargo:</label>
               <div class="controls">
-                  <input type="text" class="span3" name="ed_cargo" id="ed_cargo" value=""/>
+                  <input type="text" class="span3" name="cargos" id="cargos" value=""/>
                   <span class="help-inline"></span>
               </div>
          </div>
@@ -31,14 +32,7 @@
 								<div class="controls">
 										<div class="fileupload fileupload-new" data-provides="fileupload">
 												<div class="input-append">
-														<div class="uneditable-input">
-																<i class="icon-file fileupload-exists"></i>
-																<span class="fileupload-preview"></span>
-														</div>
-									 <span class="btn btn-file">
-									 <span class="fileupload-new">Selecionar</span>
-									 </span>
-														<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+															<input type="file" name="img" id="img" placeholder="Selecione uma imagem">
 												</div>
 										</div>
 								</div>
@@ -46,7 +40,7 @@
 					<div class="control-group ">
 								<label class="control-label">Descrição</label>
 								<div class="controls">
-									 <textarea class="span6" rows="6"></textarea>
+									 <textarea class="span6" name="descricao" id="descricao" rows="6"></textarea>
 								</div>
           </div>
 

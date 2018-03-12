@@ -5,7 +5,7 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-				<h4><i class="icon-reorder"> </i>Colaboradores cadastrados</h4>
+				<h4><i class="icon-reorder"> </i>Membros cadastrados</h4>
 			</div>
 			<div class="widget-body">
 				<a href="{{route('adm.cpa.cadastro')}}" class="btn btn-warning">
@@ -22,31 +22,34 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($dados as $d)
-						<tr class="odd gradeX">
-							<td>{{$d->descricao}}</td>
-							<td>Auxiliar Contabil</td>
-							<td>Realização de atividades contabeis</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#"><i class="icon-pencil"></i> Editar</a>
-										</li>
-										<li>
-											<a href="#"><i class="icon-remove"></i> Deletar</a>
-										</li>
-									</ul>
-								</div>
-							</td>
-						</tr>
+						@foreach($cpa as $c)
+							@if($c->cpa != null)
+							<tr class="odd gradeX">
+								<input type="hidden" name="{{$c->cpa->id}}_id" value="{{$c->cpa->id}}">
+								<td>{{$c->nome}}</td>
+								<td>{{$c->cargos}}</td>
+								<td>{{$c->cpa->descricao}}</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="#"><i class="icon-pencil"></i> Editar</a>
+											</li>
+											<li>
+												<a href="{{route('adm.cpa.excluir')}}"><i class="icon-remove"></i> Deletar</a>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							@endif
 						@endforeach
 					</tbody>
 				</table>
 				<div class="row-fluid">
 					<div class="span6">
-						<p style="padding-top:5px;">Total de CPA:  1</p>
+						<p style="padding-top:5px;">Total de membros: {{$cpa->count()}}</p>
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
@@ -57,8 +60,4 @@
 		</div>
 	</div>
 </div>
-
-<link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
-<script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
-<script type="text/javascript">
 @endsection

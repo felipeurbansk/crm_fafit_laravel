@@ -26,4 +26,8 @@ class LoginController extends Controller
     public function cadastro(){
       return view('auth.register');
     }
+
+    public function alterar_senha(){
+
+    }
 }

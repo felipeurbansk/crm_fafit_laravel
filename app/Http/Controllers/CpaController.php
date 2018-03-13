@@ -27,11 +27,10 @@ class CpaController extends Controller
         return redirect()->route('adm.cpa');
     }
 
-    public function excluir(Request $req){
-        $cpa = $req->all();
-
-        Cpa::find($cpa['id'])->delete();
-        Membro::find('cpas_id',$cpa['id'])->delete();
+    public function excluir($id){
+        $membro = Membro::find($id);
+        $membro->delete();
+        $membro->cpa()->delete();
         return redirect()->route('adm.cpa');
     }
 }

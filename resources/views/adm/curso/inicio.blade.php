@@ -23,13 +23,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($dados as $d)
+						@foreach($curso as $c)
 						<tr class="odd gradeX">
-							<input type="hidden" name="id" value="{{$d->id}}">
-							<td width="22%">{{$d->nome}}</td>
-							<td width="22%">{{str_limit($d->descricao,50)}}</td>
-							<td width="10%">{{$d->duracao}} Anos</td>
-							<td width="10%">{{$d->ch_total}}</td>
+							<input type="hidden" name="id" value="{{$c->id}}">
+							<td width="22%">{{$c->nome}}</td>
+							<td width="22%">{{str_limit($c->descricao,50)}}</td>
+							<td width="10%">{{$c->duracao}} Anos</td>
+							<td width="10%">{{$c->ch_total}}</td>
 							<td width="10%">
 								<div class="btn-group">
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
@@ -41,7 +41,7 @@
 											<a href="#"><i class="icon-pencil"></i> Editar</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-remove"></i> Deletar</a>
+											<a href="{{route('adm.curso.excluir',$c->id)}}"><i class="icon-remove"></i> Deletar</a>
 										</li>
 									</ul>
 								</div>
@@ -52,7 +52,7 @@
 				</table>
 				<div class="row-fluid">
 					<div class="span6">
-						<p style="padding-top:5px;">Total de curso: {{$dados->count()}}</p>
+						<p style="padding-top:5px;">Total de curso: {{$curso->count()}}</p>
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">

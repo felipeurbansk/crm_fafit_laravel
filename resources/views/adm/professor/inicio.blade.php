@@ -20,15 +20,18 @@
 								<th width="22%">Nome</th>
 								<th width="13%">Titulação</th>
 								<th width="12%">Descrição</th>
+								<th width="12%">Cordenador</th>
 								<th width="10%">Ações</th>
 							</tr>
 						</tr>
 					</thead>
 					<tbody>
 						<tr class="odd gradeX">
-							<td>Ricardo</td>
-							<td>Especialização</td>
-							<td>Desenvolvedor web</td>
+							@foreach($professor as $p)
+							<td>{{$p->nome}}</td>
+							<td>{{$p->titulacao}}</td>
+							<td>{{str_limit($p->descricao,50)}}</td>
+							<td>{{($p->coordenador == 1 ? "Sim" : "Não")}}</td>
 							<td>
 								<div class="btn-group">
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
@@ -42,11 +45,13 @@
 									</ul>
 								</div>
 							</td>
+						</tr>
+						@endforeach
 					</tbody>
 				</table>
 				<div class="row-fluid">
 					<div class="span6">
-						<p style="padding-top:5px;">Total de professores:  1</p>
+						<p style="padding-top:5px;">Total de professores:  {{$professor->count()}}</p>
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">

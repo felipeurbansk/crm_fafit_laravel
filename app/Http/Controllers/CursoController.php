@@ -7,8 +7,8 @@ use App\Curso;
 class CursoController extends Controller
 {
     public function index(){
-      $dados = Curso::get();
-      return view('adm.curso.inicio',compact('dados'));
+      $curso = Curso::get();
+        return view('adm.curso.inicio',compact('curso'));
     }
 
     public function cadastro(){
@@ -25,5 +25,14 @@ class CursoController extends Controller
       $cursos = Curso::all();
 
       return view('adm.inicio',compact('cursos'));
+    }
+
+    public function excluir($id){
+      $curso = Curso::find($id);
+      $curso->disciplinas()->delete();
+      $curso->delete();
+
+
+      return redirect()->route('adm.curso');
     }
 }

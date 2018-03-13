@@ -37,7 +37,7 @@
 												<a href="#"><i class="icon-pencil"></i> Editar</a>
 											</li>
 											<li>
-												<a href="{{route('adm.cpa.excluir')}}"><i class="icon-remove"></i> Deletar</a>
+												<a href="{{route('adm.cpa.excluir',$c->id)}}"><i class="icon-remove"></i> Deletar</a>
 											</li>
 										</ul>
 									</div>

@@ -12,42 +12,41 @@
 			</div>
 			<div class="widget-body">
 
-				<form action="" method="post" class="form-horizontal">
+				<form action="{{route('adm.professor.salvar')}}" method="post" class="form-horizontal" enctype="multipart/form-data" >
+				{{csrf_field()}}
 				<div class="control-group ">
-            <label class="control-label" for="ed_nome">Nome:</label>
+            <label class="control-label" for="nome">Nome:</label>
             <div class="controls">
-                <input type="text" class="input-medium" name="ed_nome" id="ed_nome" value=""/>
+                <input type="text" class="input-medium" name="nome" id="nome" value=""/>
                 <span class="help-inline"></span>
             </div>
         </div>
 				<div class="control-group ">
-              <label class="control-label" for="ed_titulacao">Titulação:</label>
+              <label class="control-label" for="titulacao">Titulação:</label>
               <div class="controls">
-                  <input type="text" class="input-xxlarge" name="ed_titulacao" id="ed_titulacao" value=""/>
+                  <input type="text" class="input-xxlarge" name="titulacao" id="titulacao" value=""/>
                   <span class="help-inline"></span>
               </div>
          </div>
         <div class="control-group ">
 						<label class="control-label">Foto</label>
 								<div class="controls">
-										<div class="fileupload fileupload-new" data-provides="fileupload">
-												<div class="input-append">
-														<div class="uneditable-input">
-																<i class="icon-file fileupload-exists"></i>
-																<span class="fileupload-preview"></span>
-														</div>
-									 <span class="btn btn-file">
-									 <span class="fileupload-new">Selecionar</span>
-									 </span>
-														<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-												</div>
-										</div>
+										<input type="file" name="img">
 								</div>
           </div>
 					<div class="control-group ">
 								<label class="control-label">Descrição</label>
 								<div class="controls">
-									 <textarea class="span6" rows="6"></textarea>
+									 <textarea class="span6" rows="6" name="descricao" id="descricao"></textarea>
+								</div>
+          </div>
+					<div class="control-group ">
+								<label class="control-label">Coordenador</label>
+								<div class="controls">
+									 <select name="coordenador" id="coordenador">
+									 	<option value="0">Não</option>
+										<option value="1">Sim</option>
+									 </select>
 								</div>
           </div>
 

@@ -11,7 +11,7 @@
 			</div>
 			<div class="widget-body">
 
-				<form action="{{route('adm.cpa.salvar')}}" method="post" class="form-horizontal"enctype="multipart/form-data">
+				<form action="{{route('adm.cpa.salvar')}}" method="post" class="form-horizontal" enctype="multipart/form-data">
 					{{csrf_field()}}
 				<div class="control-group ">
             <label class="control-label" for="nome">Nome:</label>

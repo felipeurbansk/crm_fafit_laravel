@@ -14,12 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+/*Grupo de rotas para usuarios autenticados*/
+Route::group(['middleware' => 'auth'],function(){
+
 
 /*Rotas de usuario*/
 Route::get('/logout',['as' => 'login.logout','uses' => 'Login\LoginController@sair']);
+Route::get('/reset',['as' => 'login.reset','uses' => 'Login\LoginController@reset']);
 /*Fim rotas de usuario*/
 
-Route::group(['middleware' => 'auth'],function(){
 
 /*Rota de inicio*/
 Route::get('/home',['as' => 'inicio','uses'=>'CursoController@exibir']);
@@ -30,6 +33,7 @@ Route::get('/adm/curso',['as'=>'adm.curso','uses'=>'CursoController@index']);
 Route::get('/adm/curso/exibir',['as'=>'adm.curso.exibir','uses'=>'CursoController@exibir']);
 Route::get('/adm/curso/cadastro',['as'=>'adm.curso.cadastro','uses'=>'CursoController@cadastro']);
 Route::post('/adm/curso/salvar',['as'=> 'adm.curso.salvar','uses'=>'CursoController@salvar']);
+Route::get('/adm/curso/excluir/{id}',['as'=> 'adm.curso.excluir','uses'=>'CursoController@excluir']);
 /*Fim rotas dos Cursos*/
 
 /*Rotas dos Professores*/
@@ -48,7 +52,7 @@ Route::post('/adm/noticia/salvar',['as'=>'adm.noticia.salvar','uses'=>'NoticiaCo
 Route::get('/adm/cpa',['as'=>'adm.cpa','uses'=>'CpaController@index']);
 Route::get('/adm/cpa/cadastro',['as'=>'adm.cpa.cadastro','uses'=>'CpaController@cadastro']);
 Route::post('/adm/cpa/salvar',['as'=>'adm.cpa.salvar','uses'=>'CpaController@salvar']);
-Route::put('/adm/cpa/excluir',['as'=>'adm.cpa.excluir','uses'=>'CpaController@excluir']);
+Route::get('/adm/cpa/excluir/{id}',['as'=>'adm.cpa.excluir','uses'=>'CpaController@excluir']);
 /*Fim rotas da CPAs*/
 
 /*Rotas do Calendario*/

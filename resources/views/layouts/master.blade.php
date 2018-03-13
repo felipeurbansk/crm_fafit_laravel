@@ -36,7 +36,7 @@
                                    <b class="caret"></b>
                                </a>
                                <ul class="dropdown-menu">
-                                   <li><a href="#"><i cl  ass="icon-user"></i> Alterar Senha</a></li>
+                                   <li><a href="{{route('login.reset')}}"><i cl  ass="icon-user"></i> Alterar Senha</a></li>
                                    <li class="divider"></li>
                                    <li><a href="{{route('login.logout')}}"><i class="icon-key"></i> Sair</a></li>
                                </ul>
@@ -74,15 +74,15 @@
                 <span class="arrow"></span>
                 </a>
                 <ul class="sub">
-                    <li class="active"><a class="" href="index.html">Dashboard 1</a></li>
-                    <li><a class="" href="index_2.html">Dashboard 2</a></li>
+                    <li class="active"><a class="" href="index.html">Cursos</a></li>
+                    <li><a class="" href="index_2.html">Disciplinas</a></li>
                 </ul>
   				</li>
            <li class="has-sub"><a class="" href="{{route('inicio')}}"><span class="icon-box"><i class="icon-home"></i></span>Home</a></li>
            <li class="has-sub"><a class="" href="{{route('adm.curso')}}"><span class="icon-box"><i class="icon-book"></i></span>Cursos</a></li>
-           <li class="has-sub"><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-star"></i></span>CPA</a></li>
-           <li class=""><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-list"></i></span>Notícias</a></li>
            <li class=""><a class="" href="{{route('adm.professor')}}"><span class="icon-box"><i class="icon-user"></i></span>Professores</a></li>
+           <li class="has-sub"><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-star"></i></span>CPA</a></li>
+           <li class=""><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-rss"></i></span>Notícias</a></li>
            <li class=""><a class="" href="{{route('adm.calendario')}}"><span class="icon-box"><i class="icon-calendar"></i></span>Calendario</a></li>
          </ul>
          <!-- END SIDEBAR MENU -->

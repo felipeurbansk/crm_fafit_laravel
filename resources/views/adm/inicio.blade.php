@@ -23,7 +23,7 @@
                                           <span class="note"></span>{{$c->disciplinas()->count()}}<span>Disciplinas</span></h4>
                                   </div>
                                   <ul>
-                                      <li><strong>{{$c->duracao}} Anos</strong></li>
+                                      <li><strong>{{$c->duracao}} Semestres</strong></li>
                                   </ul>
                               </div>
                            </div>

@@ -11,7 +11,7 @@
 			</div>
 			<div class="widget-body">
 
-				<form action="" method="post" class="form-horizontal">
+				<form action="{{route('adm.noticia.salvar')}}" method="post" class="form-horizontal">
 
 				<div class="control-group ">
             <label class="control-label" for="ed_titulo">Titulo:</label>
@@ -54,7 +54,7 @@
 
           <div class="form-actions">
                 <button type="submit" class="btn blue"><i class="icon-ok"></i> Adicionar</button>
-                <a href="Curso.php">ou cancelar</a>
+                <a href="{{route('adm.noticia')}}">ou cancelar</a>
           </div>
 				</form>
 			</div>

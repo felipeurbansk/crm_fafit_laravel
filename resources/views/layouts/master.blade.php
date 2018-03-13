@@ -36,7 +36,7 @@
                                    <b class="caret"></b>
                                </a>
                                <ul class="dropdown-menu">
-                                   <li><a href="{{route('login.reset')}}"><i cl  ass="icon-user"></i> Alterar Senha</a></li>
+                                   <li><a href="{{route('login.reset')}}"><i class="icon-user"></i> Alterar Senha</a></li>
                                    <li class="divider"></li>
                                    <li><a href="{{route('login.logout')}}"><i class="icon-key"></i> Sair</a></li>
                                </ul>

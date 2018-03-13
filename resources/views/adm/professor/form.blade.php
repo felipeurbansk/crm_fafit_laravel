@@ -52,7 +52,7 @@
 
           <div class="form-actions">
                 <button type="submit" class="btn blue"><i class="icon-ok"></i> Salvar</button>
-                <a href="professor.php">ou cancelar</a>
+                <a href="{{route('adm.professor')}}">ou cancelar</a>
           </div>
 				</form>
 

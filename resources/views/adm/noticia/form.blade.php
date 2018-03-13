@@ -14,25 +14,25 @@
 				<form action="{{route('adm.noticia.salvar')}}" method="post" class="form-horizontal">
 
 				<div class="control-group ">
-            <label class="control-label" for="ed_titulo">Titulo:</label>
+            <label class="control-label" for="titulo">Titulo:</label>
             <div class="controls">
-                <input type="text" class="input-medium" name="ed_titulo" id="ed_titulo" value=""/>
+                <input type="text" class="input-medium" name="titulo" id="titulo" value=""/>
                 <span class="help-inline"></span>
             </div>
         </div>
 
 				<div class="control-group ">
-              <label class="control-label" for="ed_corpo">Corpo:</label>
+              <label class="control-label" for="corpo">Corpo:</label>
               <div class="controls">
-                  <input type="text" class="input-xxlarge" name="ed_corpo" id="ed_corpo" value=""/>
+                  <input type="text" class="input-xxlarge" name="corpo" id="corpo" value=""/>
                   <span class="help-inline"></span>
               </div>
          </div>
 
 				 <div class="control-group ">
-							 <label class="control-label" for="ed_resumo">Resumo:</label>
+							 <label class="control-label" for="resumo">Resumo:</label>
 							 <div class="controls">
-									 <input type="text" class="input-xxlarge" name="ed_resumo" id="ed_resumo" value=""/>
+									 <input type="text" class="input-xxlarge" name="resumo" id="resumo" value=""/>
 									 <span class="help-inline"></span>
 							 </div>
 					</div>
@@ -45,9 +45,9 @@
           </div>
 
 					<div class="control-group ">
-								<label class="control-label" for="ed_pchave">Palavras-chave:</label>
+								<label class="control-label" for="pchave">Palavras-chave:</label>
 								<div class="controls">
-										<input type="text" class="input-xxlarge" name="ed_pchave" id="ed_pchave" value=""/>
+										<input type="text" class="input-xxlarge" name="pchave" id="pchave" value=""/>
 										<span class="help-inline"></span>
 								</div>
 					 </div>

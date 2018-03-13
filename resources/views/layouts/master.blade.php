@@ -32,7 +32,7 @@
                        @else
                            <li class="dropdown">
                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                   <span class="username">{{Auth::user()->name}}</span>
+                                   <span class="username"><i class="icon-user"></i> {{Auth::user()->name}}</span>
                                    <b class="caret"></b>
                                </a>
                                <ul class="dropdown-menu">

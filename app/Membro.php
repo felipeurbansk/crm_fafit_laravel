@@ -10,7 +10,6 @@ class Membro extends Model
         'nome','cargos'
     ];
 
-    public $timestamps = false;
 
     public function cpa(){
         return $this->belongsTo('App\Cpa','cpas_id');

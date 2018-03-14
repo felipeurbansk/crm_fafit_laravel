@@ -40,7 +40,7 @@
 											<a href="#"><i class="icon-pencil"></i> Editar</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-remove"></i> Deletar</a>
+											<a href="{{route('adm.professor.excluir',$p->id)}}"><i class="icon-remove"></i> Deletar</a>
 										</li>
 									</ul>
 								</div>

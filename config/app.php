@@ -13,21 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
-    /*
-    |--------------------------------------------------------------------------
-    | Variaveis Global
-    |--------------------------------------------------------------------------
-    | Aqui estará as variaveis de configuração personalizada do site.
-    */
-    'instituicao' => 'FAFIT - Faculdades integradas de itararé',
-    'nome_fantasia' => 'Sociedade Itarareense de Ensino',
-    'endereco' => 'Rua: João Batista Veiga, 1725',
-    'cep' => '18460-000',
-    'cidade' => 'Itararé - SP',
-    'ddd' => '015',
-    'telefone' => '3531-8484',
-    'athor' => 'Felipe Urbanski',
+    'tituloSite' => env('tituloSite', 'Fafit - Faculdades Integradas de Itararé | Gradução, Pós-Graduação e Cursos Técnicos Profissionalizantes'),
+
 
     /*
     |--------------------------------------------------------------------------

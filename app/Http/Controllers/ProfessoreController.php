@@ -22,4 +22,10 @@ class ProfessoreController extends Controller
       return redirect()->route('adm.professor');
     }
 
+    public function excluir($id){
+      Professore::find($id)->delete();
+
+      return redirect()->route('adm.professor');
+    }
+
 }

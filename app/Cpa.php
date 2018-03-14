@@ -10,7 +10,6 @@ class Cpa extends Model
       'descricao','img'
     ];
 
-    public $timestamps = false;
 
     public function membros(){
       return $this->hasMany('App\Membro','cpas_id');

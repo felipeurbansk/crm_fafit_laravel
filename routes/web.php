@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'],function(){
 
 /*Rotas de usuario*/
 Route::get('/logout',['as' => 'login.logout','uses' => 'Login\LoginController@sair']);
-Route::get('/reset',['as' => 'login.reset','uses' => 'Login\LoginController@reset']);
+Route::get('/alterpassword',['as' => 'login.reset','uses' => 'Login\LoginController@alterpassword']);
 /*Fim rotas de usuario*/
 
 
@@ -40,6 +40,7 @@ Route::get('/adm/curso/excluir/{id}',['as'=> 'adm.curso.excluir','uses'=>'CursoC
 Route::get('/adm/professor',['as'=>'adm.professor','uses'=>'ProfessoreController@index']);
 Route::get('/adm/professor/cadastro', ['as'=>'adm.professor.cadastro','uses'=>'ProfessoreController@cadastro']);
 Route::post('/adm/professor/salvar', ['as'=>'adm.professor.salvar','uses'=>'ProfessoreController@salvar']);
+Route::get('/adm/professor/excluir/{id}', ['as'=>'adm.professor.excluir','uses'=>'ProfessoreController@excluir']);
 /*Fim rotas dos Professores*/
 
 /*Rotas das Noticias*/

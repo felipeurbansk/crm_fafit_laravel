@@ -10,7 +10,6 @@ class Disciplina extends Model
       'nome','semestres','descricao','ch'
     ];
 
-    public $timestamps = false;
 
     public function cursos(){
       return $this->belongsToMany('App\Curso','cursos_has_disciplinas','disciplinas_id', 'cursos_id');

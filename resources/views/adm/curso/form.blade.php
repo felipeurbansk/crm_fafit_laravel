@@ -14,35 +14,36 @@
 
 				<form action="{{route('adm.curso.salvar')}}" method="post" class="form-horizontal">
 					{{csrf_field()}}
-				<div class="control-group ">
+				<div class="control-group @if($errors->has('nome')) error @endif">
             <label class="control-label" for="nome">Curso:</label>
             <div class="controls">
                 <input type="text" class="span6" name="nome" id="nome"/>
-                <span class="help-inline"></span>
+                <span class="help-inline">{{$errors->first('nome')}}</span>
             </div>
         </div>
 
-				<div class="control-group ">
+				<div class="control-group @if($errors->has('duracao')) error @endif">
               <label class="control-label" for="duracao">Duração (Semestres):</label>
               <div class="controls">
                   <input type="text" class="span1" name="duracao" id="duracao"/>
-                  <span class="help-inline"></span>
+                  <span class="help-inline">{{$errors->first('duracao')}}</span>
               </div>
          </div>
 
-				 <div class="control-group ">
+				 <div class="control-group @if($errors->has('ch_total')) error @endif ">
 							 <label class="control-label" for="ch_total">Carga Horaria:</label>
 							 <div class="controls">
 									 <input type="text" class="span1" name="ch_total" id="ch_total"/>
-									 <span class="help-inline"></span>
+									 <span class="help-inline">{{$errors->first('ch_total')}}</span>
 							 </div>
 					</div>
 
-					<div class="control-group ">
+					<div class="control-group @if($errors->has('descricao')) error @endif ">
 								<label class="control-label">Descrição:</label>
 								<div class="controls">
 									 <textarea class="span6" name="descricao" rows="6"></textarea>
 								</div>
+								<span class="help-inline">{{$errors->first('descricao')}}</span>
           </div>
 
           <div class="form-actions">

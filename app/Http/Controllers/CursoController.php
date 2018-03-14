@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Curso;
+use App\Http\Requests\CursoRequest;
 class CursoController extends Controller
 {
     public function index(){
@@ -15,7 +16,7 @@ class CursoController extends Controller
       return view('adm.curso.form');
     }
 
-    public function salvar(Request $req){
+    public function salvar(CursoRequest $req){
       $curso = $req->all();
       Curso::create($curso);
       return redirect()->route('adm.curso');

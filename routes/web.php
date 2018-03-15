@@ -47,6 +47,7 @@ Route::get('/adm/professor/excluir/{id}', ['as'=>'adm.professor.excluir','uses'=
 Route::get('/adm/noticia',['as'=>'adm.noticia','uses'=>'NoticiaController@index']);
 Route::get('/adm/noticia/cadastro',['as'=>'adm.noticia.cadastro','uses'=>'NoticiaController@cadastro']);
 Route::post('/adm/noticia/salvar',['as'=>'adm.noticia.salvar','uses'=>'NoticiaController@salvar']);
+Route::get('/adm/noticia/excluir/{id}',['as'=>'adm.noticia.excluir','uses'=>'NoticiaController@excluir']);
 /*Fim rotas das Noticias*/
 
 /*Rotas da CPAs*/
@@ -60,6 +61,7 @@ Route::get('/adm/cpa/excluir/{id}',['as'=>'adm.cpa.excluir','uses'=>'CpaControll
 Route::get('/adm/calendario',['as'=>'adm.calendario','uses'=>'CalendarioController@index']);
 Route::get('/adm/calendario/cadastro',['as'=>'adm.calendario.cadastro','uses'=>'CalendarioController@cadastro']);
 Route::post('/adm/calendario/salvar',['as'=>'adm.calendario.salvar','uses'=>'CalendarioController@salvar']);
+Route::post('/adm/calendario/excluir',['as'=>'adm.calendario.excluir','uses'=>'CalendarioController@excluir']);
 /*Fim rotas dos Calendario*/
 
 });

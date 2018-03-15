@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CursoRequest extends FormRequest
+class CpaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,20 +25,16 @@ class CursoRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'duracao' => 'required',
-            'ch_total' => 'required',
-            'descricao' => 'required'
+            'cargos' => 'required',
+            'descricao' => 'required',
         ];
     }
 
     public function messages(){
       return [
-          'nome.required' => 'É necessário informar o nome completo',
-          'duracao.required' => 'É necessário informar o número de semestres do curso',
-          'ch_total.required' => 'É necessário informar o total de carga horaria',
-          'descricao.required' => 'É necessário uma descrição sobre o curso'
+        'nome.required' => 'É necessário informar o nome completo',
+        'cargos.required' => 'É necessário informar o(s) cargo(s)',
+        'descricao.required' => 'É necessário uma descrição do colaborador',
       ];
     }
-
-
 }

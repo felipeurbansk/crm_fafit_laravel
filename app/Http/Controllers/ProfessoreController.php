@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfessoreRequest;
 use App\Professore;
 
 class ProfessoreController extends Controller
@@ -16,7 +17,7 @@ class ProfessoreController extends Controller
       return view('adm.professor.form');
     }
 
-    public function salvar(Request $req){
+    public function salvar(ProfessoreRequest $req){
       Professore::create($req->all());
 
       return redirect()->route('adm.professor');

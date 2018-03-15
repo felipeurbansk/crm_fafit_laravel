@@ -17,8 +17,7 @@ class CursoController extends Controller
     }
 
     public function salvar(CursoRequest $req){
-      $curso = $req->all();
-      Curso::create($curso);
+      Curso::create($req->all());
       return redirect()->route('adm.curso');
     }
 

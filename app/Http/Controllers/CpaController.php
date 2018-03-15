@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CpaRequest;
 use App\Cpa;
 use App\Membro;
 
@@ -17,7 +18,7 @@ class CpaController extends Controller
       return view('adm.cpa.form');
     }
 
-    public function salvar(Request $req){
+    public function salvar(CpaRequest $req){
         $cpa = Cpa::create($req->all());
 
         $membro = new Membro($req->all());

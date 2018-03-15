@@ -11,7 +11,7 @@ class LoginController extends Controller
       return view('auth.login');
     }
 
-    public function entrar(Request $req){
+    public function entrar(UserRequest $req){
       $dados = $req->all();
       if(Auth::attemp(['email' => $dados['email'],'password'=>$dados['password']])){
         return redirect()->route('/adm');

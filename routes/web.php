@@ -30,16 +30,20 @@ Route::get('/home',['as' => 'inicio','uses'=>'CursoController@exibir']);
 
 /*Rotas dos Cursos*/
 Route::get('/adm/curso',['as'=>'adm.curso','uses'=>'CursoController@index']);
+//Route::get('/adm/curso/cadastrar',['as'=>'adm.curso.cadastrar','uses'=>'CursoController@cadastrar']);
+Route::get('/adm/curso/salvar',['as'=>'adm.curso.cadastro','uses'=>'CursoController@cadastro']);
 Route::get('/adm/curso/exibir',['as'=>'adm.curso.exibir','uses'=>'CursoController@exibir']);
-Route::get('/adm/curso/cadastro',['as'=>'adm.curso.cadastro','uses'=>'CursoController@cadastro']);
-Route::post('/adm/curso/salvar',['as'=> 'adm.curso.salvar','uses'=>'CursoController@salvar']);
+Route::get('/adm/curso/editar/{id}',['as'=> 'adm.curso.editar','uses'=>'CursoController@editar']);
+Route::put('/adm/curso/atualizar/',['as'=> 'adm.curso.atualizar','uses'=>'CursoController@atualizar']);
 Route::get('/adm/curso/excluir/{id}',['as'=> 'adm.curso.excluir','uses'=>'CursoController@excluir']);
 /*Fim rotas dos Cursos*/
 
 /*Rotas dos Professores*/
 Route::get('/adm/professor',['as'=>'adm.professor','uses'=>'ProfessoreController@index']);
-Route::get('/adm/professor/cadastro', ['as'=>'adm.professor.cadastro','uses'=>'ProfessoreController@cadastro']);
-Route::post('/adm/professor/salvar', ['as'=>'adm.professor.salvar','uses'=>'ProfessoreController@salvar']);
+Route::get('/adm/professor/cadastrar', ['as'=>'adm.professor.cadastrar','uses'=>'ProfessoreController@cadastrar']);
+Route::post('/adm/professor/cadastro', ['as'=>'adm.professor.cadastro','uses'=>'ProfessoreController@cadastro']);
+Route::get('/adm/professor/editar/{id}', ['as'=>'adm.professor.editar','uses'=>'ProfessoreController@editar']);
+Route::put('/adm/professor/atualizar', ['as'=>'adm.professor.atualizar','uses'=>'ProfessoreController@atualizar']);
 Route::get('/adm/professor/excluir/{id}', ['as'=>'adm.professor.excluir','uses'=>'ProfessoreController@excluir']);
 /*Fim rotas dos Professores*/
 

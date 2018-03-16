@@ -13,12 +13,25 @@ class ProfessoreController extends Controller
       return view('adm.professor.inicio',compact('professor'));
     }
 
-    public function cadastro(){
+    public function cadastrar(){
       return view('adm.professor.form');
     }
 
-    public function salvar(ProfessoreRequest $req){
+    public function cadastro(ProfessoreRequest $req){
       Professore::create($req->all());
+
+      return redirect()->route('adm.professor');
+    }
+
+    public function editar($id){
+      $professor = Professore::find($id);
+      return view('adm.professor.form',compact('professor'));
+    }
+
+    public function atualizar(ProfessoreRequest $req){
+      $professor = $req->all();
+
+      Professore::find($professor['id'])->update($professor);
 
       return redirect()->route('adm.professor');
     }

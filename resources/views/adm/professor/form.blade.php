@@ -35,7 +35,7 @@
               </div>
          </div>
         <div class="control-group">
-						<label class="control-label">Foto(Opcional):</label>
+						<label class="control-label">Foto(Opcional) :</label>
 								<div class="controls">
 										<input type="file" name="img">
 								</div>

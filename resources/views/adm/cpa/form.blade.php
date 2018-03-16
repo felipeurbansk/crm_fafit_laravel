@@ -6,7 +6,7 @@
 		<div class="widget">
 			<div class="widget-title">
 
-					<h4><i class="icon-plus"> </i>Novo Colaborador</h4>
+					<h4><i class="icon-plus"> </i>Novo Colaborador </h4>
 
 			</div>
 			<div class="widget-body">

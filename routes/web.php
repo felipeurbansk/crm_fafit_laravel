@@ -49,8 +49,10 @@ Route::get('/adm/professor/excluir/{id}', ['as'=>'adm.professor.excluir','uses'=
 
 /*Rotas das Noticias*/
 Route::get('/adm/noticia',['as'=>'adm.noticia','uses'=>'NoticiaController@index']);
-Route::get('/adm/noticia/cadastro',['as'=>'adm.noticia.cadastro','uses'=>'NoticiaController@cadastro']);
-Route::post('/adm/noticia/salvar',['as'=>'adm.noticia.salvar','uses'=>'NoticiaController@salvar']);
+Route::post('/adm/noticia/cadastrar',['as'=>'adm.noticia.cadastrar','uses'=>'NoticiaController@cadastrar']);
+Route::get('/adm/noticia/salvar',['as'=>'adm.noticia.salvar','uses'=>'NoticiaController@salvar']);
+Route::get('/adm/noticia/editar/{id}',['as'=>'adm.noticia.editar','uses'=>'NoticiaController@editar']);
+Route::put('/adm/noticia/atualizar',['as'=>'adm.noticia.atualizar','uses'=>'NoticiaController@atualizar']);
 Route::get('/adm/noticia/excluir/{id}',['as'=>'adm.noticia.excluir','uses'=>'NoticiaController@excluir']);
 /*Fim rotas das Noticias*/
 

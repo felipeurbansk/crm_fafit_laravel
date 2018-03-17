@@ -7,7 +7,7 @@
 		<div class="widget">
 			<div class="widget-title">
 
-					<h4><i class="icon-plus"> </i>Cadastrar novo professor</h4>
+					<h4><i class="icon-plus"> </i>@isset($professor) Alterar usuário  @else Cadastrar novo professor @endisset</h4>
 
 			</div>
 			<div class="widget-body">

@@ -26,13 +26,17 @@ class NoticiaRequest extends FormRequest
         return [
             'titulo' => 'required',
             'corpo' => 'required',
+            'resumo' => 'required',
+            'data' => 'required',
+            'autor' => 'required',
+            'palavras_chaves' => 'required',
         ];
     }
 
     public function messages(){
       return [
         'titulo.required' => '* É necessário informar o titulo completo',
-        'corpo.required' => '* É necessário informar o corpo completo',
+        'corpo.required' => '* É necessário um corpo para a noticia',
       ];
     }
 }

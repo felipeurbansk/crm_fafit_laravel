@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="pt-br"> <!--<![endif]-->
+<!--[if !IE]><!-->AS <html lang="pt-br"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
   <meta charset="utf-8" />
-  <title>{{config('app.instituicao')}}</title>
+  <title>{{config('app.tituloSite')}}</title>
   <base href="{{url('/')}}" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="Fafit - Faculdades integradas de itararé" name="description" />

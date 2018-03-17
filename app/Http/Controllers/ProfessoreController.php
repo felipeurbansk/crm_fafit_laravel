@@ -9,7 +9,7 @@ use App\Professore;
 class ProfessoreController extends Controller
 {
     public function index(){
-      $professor = Professore::all();
+      $professor = Professore::get();
       return view('adm.professor.inicio',compact('professor'));
     }
 

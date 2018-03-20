@@ -10,7 +10,7 @@ class NoticiaController extends Controller
 {
 
     public function index(){
-      $noticia = Noticia::orderBy('data','desc')->get();
+      $noticia = Noticia::orderBy('data','desc')->paginate(5);
 
       return view('adm.noticia.inicio',compact('noticia'));
     }

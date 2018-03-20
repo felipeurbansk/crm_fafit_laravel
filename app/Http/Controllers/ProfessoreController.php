@@ -8,9 +8,9 @@ use App\Professore;
 
 class ProfessoreController extends Controller
 {
-  
+
     public function index(){
-      $professor = Professore::orderBy('nome','asc')->get();
+      $professor = Professore::orderBy('nome','asc')->paginate(5);
       return view('adm.professor.inicio',compact('professor'));
     }
 

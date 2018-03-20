@@ -56,6 +56,7 @@
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
+							{{ $cpa->links() }}
 						</div>
 					</div>
 				</div>

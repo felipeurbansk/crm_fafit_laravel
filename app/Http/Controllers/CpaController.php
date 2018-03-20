@@ -11,7 +11,7 @@ class CpaController extends Controller
 {
 
     public function index(){
-      $cpa = Membro::all();
+      $cpa = Membro::orderBy('nome','asc')->paginate(5);
       return view('adm.cpa.inicio',compact('cpa'));
     }
 

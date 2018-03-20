@@ -10,7 +10,7 @@ class CursoController extends Controller
 {
 
     public function index(){
-      $curso = Curso::get();
+      $curso = Curso::orderBy('nome','asc')->paginate(5);
       return view('adm.curso.inicio',compact('curso'));
     }
 
@@ -38,7 +38,7 @@ class CursoController extends Controller
       Curso::find($curso['id'])->update($curso);
       return redirect()->route('adm.curso.visualizar',$curso['id']);
     }
-    
+
     public function excluir($id){
       $curso = Curso::find($id);
       $curso->disciplinas()->delete();

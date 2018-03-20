@@ -55,6 +55,7 @@
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
+							{{ $noticia->links() }}
 						</div>
 					</div>
 				</div>

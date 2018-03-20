@@ -56,7 +56,7 @@
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
-
+							{{ $curso->links() }}
 						</div>
 					</div>
 				</div>

@@ -58,6 +58,7 @@
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
+							{{ $professor->links() }}
 						</div>
 					</div>
 				</div>

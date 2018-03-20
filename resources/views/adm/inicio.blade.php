@@ -1,37 +1,79 @@
 @extends('layouts.master')
 
 @section('content')
-
-
 <div class="row-fluid">
              <div class="span12">
-                <!-- BEGIN INLINE NOTIFICATIONS widget-->
-                <div class="widget">
-                  <div class="row-fluid">
-                     <div class="pricing-title">
-                         <h2>Cursos de graduação</h2>
-                     </div>
-                  </div>
-                   <div class="widget-body">
-                        <div class="row-fluid">
-                          @foreach($cursos as $c)
-                           <div class="span3">
-                              <div class="pricing-table">
-                                  <div class="pricing-head" >
-                                      <h3 style="background:#9f6060;"><strong>{{$c->nome}}</strong></h3>
-                                      <h4 style="background:#00bfff;">
-                                          <span class="note"></span>{{$c->disciplinas()->count()}}<span>Disciplinas</span></h4>
-                                  </div>
-                                  <ul>
-                                      <li><strong>{{$c->duracao}} Semestres</strong></li>
-                                  </ul>
-                              </div>
+               <h3 class="text-center">Dashboard</h3>
+               <div class="row-fluid circle-state-overview">
+                 <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
+                       <div class="circle-wrap">
+                           <div class="stats-circle gray-color">
+                               <i class="icon-beaker"></i>
                            </div>
-                         @endforeach
+                           <p>
+                               <strong>{{$cursos->count()}}</strong>
+                               Cursos
+                           </p>
+                       </div>
+                 </div>
+                 <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
+                       <div class="circle-wrap">
+                           <div class="stats-circle green-color">
+                               <i class="icon-group"></i>
+                           </div>
+                           <p>
+                               <strong>{{$professores->count()}}</strong>
+                               Professores
+                           </p>
+                       </div>
+                 </div>
+                  <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
+                        <div class="circle-wrap">
+                            <div class="stats-circle turquoise-color">
+                                <i class="icon-briefcase"></i>
+                            </div>
+                            <p>
+                                <strong>{{$membros->count()}}</strong>
+                                Membros CPA
+                            </p>
                         </div>
-                   </div>
-                </div>
+                  </div>
+                  <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
+                        <div class="circle-wrap">
+                            <div class="stats-circle blue-color">
+                                <i class="icon-user"></i>
+                            </div>
+                            <p>
+                                <strong>{{$usuarios->count()}}</strong>
+                                Usuários Administrativos
+                            </p>
+                        </div>
+                  </div>
+                  <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
+                        <div class="circle-wrap">
+                            <div class="stats-circle red-color">
+                                <i class="icon-bullhorn"></i>
+                            </div>
+                            <p>
+                                <strong>{{$noticias->count()}}</strong>
+                                Notícias
+                            </p>
+                        </div>
+                  </div>
+                  <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
+                        <div class="circle-wrap">
+                            <div class="stats-circle purple-color">
+                                <i class="icon-calendar"></i>
+                            </div>
+                            <p>
+                                <strong>5</strong>
+                                Eventos
+                            </p>
+                        </div>
+                  </div>
+               </div>
+                <!-- BEGIN INLINE NOTIFICATIONS widget-->
                 <!-- END INLINE NOTIFICATIONS widget-->
              </div>
-          </div>
+</div>
 @endsection

@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Curso;
 use App\Http\Requests\CursoRequest;
+
 class CursoController extends Controller
 {
+
     public function index(){
       $curso = Curso::get();
-        return view('adm.curso.inicio',compact('curso'));
+      return view('adm.curso.inicio',compact('curso'));
     }
 
     public function cadastro(){
@@ -21,17 +23,26 @@ class CursoController extends Controller
       return redirect()->route('adm.curso');
     }
 
-    public function exibir(){
-      $cursos = Curso::all();
-
-      return view('adm.inicio',compact('cursos'));
+    public function editar($id){
+      $curso = Curso::find($id);
+      return view('adm.curso.form',compact('curso'));
     }
 
+    public function visualizar($id){
+      $curso = Curso::find($id);
+      return view('adm.curso.visualizar',compact('curso'));
+    }
+
+    public function atualizar(CursoRequest $req){
+      $curso = $req->all();
+      Curso::find($curso['id'])->update($curso);
+      return redirect()->route('adm.curso.visualizar',$curso['id']);
+    }
+    
     public function excluir($id){
       $curso = Curso::find($id);
       $curso->disciplinas()->delete();
       $curso->delete();
-
 
       return redirect()->route('adm.curso');
     }

@@ -11,6 +11,6 @@ class Midia extends Model
     ];
 
     public function noticia(){
-      return $this->belongTo('App\Noticia');
+      return $this->belongTo('App\Noticia','noticias_id');
     }
 }

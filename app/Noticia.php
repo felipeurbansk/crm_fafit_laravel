@@ -11,7 +11,7 @@ class Noticia extends Model
     ];
 
     public function midias(){
-      return $this->hasMany('App\Midia');
+      return $this->hasMany('App\Midia','noticias_id');
     }
 
 }

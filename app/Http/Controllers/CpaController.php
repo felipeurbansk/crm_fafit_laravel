@@ -9,6 +9,7 @@ use App\Membro;
 
 class CpaController extends Controller
 {
+
     public function index(){
       $cpa = Membro::all();
       return view('adm.cpa.inicio',compact('cpa'));
@@ -25,6 +26,25 @@ class CpaController extends Controller
         $membro->cpa()->associate($cpa);
         $membro->save();
 
+        return redirect()->route('adm.cpa');
+    }
+
+    public function editar($id){
+        $membro = Membro::find($id);
+        return view('adm.cpa.form',compact('membro'));
+    }
+
+    public function visualizar($id){
+        $membro = Membro::find($id);
+        return view('adm.cpa.visualizar',compact('membro'));
+    }
+
+    public function atualizar(CpaRequest $req){
+        /*$cpa = $req->all();
+        $cpa = Cpa::find($cpa['id'])->update($cpa);
+        $membro = Membro::find($cpa['id'])->update($req->all());
+        $membro->save();
+        */
         return redirect()->route('adm.cpa');
     }
 

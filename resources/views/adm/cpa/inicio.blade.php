@@ -5,7 +5,7 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-				<h4><i class="icon-reorder"> </i>Membros cadastrados</h4>
+				<h4><i class="icon-reorder"> </i>Membros Cadastrados</h4>
 			</div>
 			<div class="widget-body">
 				<a href="{{route('adm.cpa.cadastro')}}" class="btn btn-warning">
@@ -34,7 +34,10 @@
 										<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 										<ul class="dropdown-menu">
 											<li>
-												<a href="#"><i class="icon-pencil"></i> Editar</a>
+												<a href="{{route('adm.cpa.visualizar',$c->id)}}"><i class="icon-pencil"></i> Visualizar</a>
+											</li>
+											<li>
+												<a href="{{route('adm.cpa.editar',$c->id)}}"><i class="icon-pencil"></i> Editar</a>
 											</li>
 											<li>
 												<a href="{{route('adm.cpa.excluir',$c->id)}}"><i class="icon-remove"></i> Deletar</a>

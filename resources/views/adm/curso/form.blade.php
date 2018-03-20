@@ -12,39 +12,43 @@
 			</div>
 			<div class="widget-body">
 
-				<form action="{{route('adm.curso.salvar')}}" method="post" class="form-horizontal">
-					{{csrf_field()}}
-				<div class="control-group @if($errors->has('nome')) error @endif">
+				<form action="@isset($curso){{route('adm.curso.atualizar')}}@else{{route('adm.curso.salvar')}}@endisset" method="post" class="form-horizontal">
+				{{csrf_field()}}
+				@isset($curso)
+					<input type="hidden" name="_method" value="put">
+					<input type="hidden" name="id" value="{{$curso->id}}">
+				@endisset
+				<div class="control-group @if($errors->has('nome')) 'error' @endif">
             <label class="control-label" for="nome">Curso:</label>
             <div class="controls">
-                <input type="text" class="span6" name="nome" id="nome" value="{{old('nome')}}"/>
+                <input type="text" class="span6" name="nome" id="nome" value="@isset($curso){{$curso->nome}}@else{{old('nome')}}@endisset"/>
 								<br>
                 <span class="help-inline">{{$errors->first('nome')}}</span>
             </div>
         </div>
 
-				<div class="control-group @if($errors->has('duracao')) error @endif">
+				<div class="control-group @if($errors->has('duracao')) 'error' @endif">
               <label class="control-label" for="duracao">Duração (Semestres):</label>
               <div class="controls">
-                  <input type="text" class="span1" name="duracao" id="duracao" value="{{old('duracao')}}"/>
+                  <input type="text" class="span1" name="duracao" id="duracao" value="@isset($curso){{$curso->duracao}}@else{{old('duracao')}}@endisset"/>
 									<br>
                   <span class="help-inline">{{$errors->first('duracao')}}</span>
               </div>
          </div>
 
-				 <div class="control-group @if($errors->has('ch_total')) error @endif ">
+				 <div class="control-group @if($errors->has('ch_total')) 'error' @endif ">
 							 <label class="control-label" for="ch_total">Carga Horaria:</label>
 							 <div class="controls">
-									 <input type="text" class="span1" name="ch_total" id="ch_total" value="{{old('ch_total')}}"/>
+									 <input type="text" class="span1" name="ch_total" id="ch_total" value="@isset($curso){{$curso->ch_total}}@else{{old('ch_total')}}@endisset"/>
 									 <br>
 									 <span class="help-inline">{{$errors->first('ch_total')}}</span>
 							 </div>
 					</div>
 
-					<div class="control-group @if($errors->has('descricao')) error @endif ">
+					<div class="control-group @if($errors->has('descricao')) 'error' @endif ">
 								<label class="control-label">Descrição:</label>
 								<div class="controls">
-									 <textarea class="span6" name="descricao" rows="6" value="{{old('descricao')}}"></textarea>
+									 <textarea class="span6" name="descricao" rows="6">@isset($curso){{$curso->descricao}}@else{{old('descricao')}}@endisset</textarea>
 									 <br>
 									 <span class="help-inline">{{$errors->first('descricao')}}</span>
 								</div>

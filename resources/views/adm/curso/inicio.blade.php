@@ -8,7 +8,7 @@
 				<h4><i class="icon-reorder"> </i>Cursos cadastrados</h4>
 			</div>
 			<div class="widget-body">
-				<a href="{{url('adm/curso/cadastro')}}" class="btn btn-warning">
+				<a href="{{route('adm.curso.cadastro')}}" class="btn btn-warning">
 					<i class="icon-plus icon-white"></i> Cadastrar Curso
 				</a>
 				<br /><br />
@@ -35,10 +35,10 @@
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 									<ul class="dropdown-menu">
 										<li>
-											<a href="#"><i class="icon-eye-open"></i> Visualizar</a>
+											<a href="{{route('adm.curso.visualizar',$c->id)}}"><i class="icon-eye-open"></i> Visualizar</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-pencil"></i> Editar</a>
+											<a href="{{route('adm.curso.editar',$c->id)}}"><i class="icon-pencil"></i> Editar</a>
 										</li>
 										<li>
 											<a href="{{route('adm.curso.excluir',$c->id)}}"><i class="icon-remove"></i> Deletar</a>
@@ -56,7 +56,7 @@
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
-							
+
 						</div>
 					</div>
 				</div>

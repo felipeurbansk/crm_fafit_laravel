@@ -68,21 +68,11 @@
   			<!-- END RESPONSIVE QUICK SEARCH FORM -->
   			<!-- BEGIN SIDEBAR MENU -->
         <ul class="sidebar-menu">
-  				<li class="has-sub">
-  					<a href="javascript:;" class="">
-  					    <span class="icon-box"> <i class="icon-dashboard"></i></span> Curso
-                <span class="arrow"></span>
-                </a>
-                <ul class="sub">
-                    <li class="active"><a class="" href="index.html">Cursos</a></li>
-                    <li><a class="" href="index_2.html">Disciplinas</a></li>
-                </ul>
-  				</li>
-           <li class="has-sub"><a class="" href="{{route('inicio')}}"><span class="icon-box"><i class="icon-home"></i></span>Home</a></li>
+           <li class="has-sub"><a class="" href="{{route('inicio')}}"><span class="icon-box"><i class="icon-dashboard"></i></span>Dashboard</a></li>
            <li class="has-sub"><a class="" href="{{route('adm.curso')}}"><span class="icon-box"><i class="icon-book"></i></span>Cursos</a></li>
            <li class=""><a class="" href="{{route('adm.professor')}}"><span class="icon-box"><i class="icon-user"></i></span>Professores</a></li>
            <li class="has-sub"><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-star"></i></span>CPA</a></li>
-           <li class=""><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-rss"></i></span>Notícias</a></li>
+           <li class=""><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-bullhorn"></i></span>Notícias</a></li>
            <li class=""><a class="" href="{{route('adm.calendario')}}"><span class="icon-box"><i class="icon-calendar"></i></span>Calendario</a></li>
          </ul>
          <!-- END SIDEBAR MENU -->

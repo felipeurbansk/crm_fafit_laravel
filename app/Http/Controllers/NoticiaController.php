@@ -8,35 +8,45 @@ use App\Noticia;
 
 class NoticiaController extends Controller
 {
+
     public function index(){
-      $noticia = Noticia::get();
+      $noticia = Noticia::orderBy('data','desc')->get();
+
       return view('adm.noticia.inicio',compact('noticia'));
     }
 
-    public function cadastrar(){
+    public function cadastro(){
       return view('adm.noticia.form');
     }
 
     public function salvar(NoticiaRequest $req){
       $noticia = Noticia::create($req->all());
-      return redirect()->route('adm.noticia');
-    }
-
-    public function excluir($id){
-      Noticia::find($id)->delete();
 
       return redirect()->route('adm.noticia');
     }
 
     public function editar($id){
       $noticia = Noticia::find($id);
+
       return view('adm.noticia.form',compact('noticia'));
+    }
+
+    public function visualizar($id){
+      $noticia = Noticia::find($id);
+
+      return view('adm.noticia.visualizar',compact('noticia'));
     }
 
     public function atualizar(NoticiaRequest $req){
       $noticia = $req->all();
 
-      Noticia::find($noticia->id)->update($noticia);
+      Noticia::find($noticia['id'])->update($noticia);
+      return redirect()->route('adm.noticia');
+    }
+
+    public function excluir($id){
+      Noticia::find($id)->delete();
+
       return redirect()->route('adm.noticia');
     }
 }

@@ -8,7 +8,7 @@
 				<h4><i class="icon-reorder"> </i>Noticias cadastrados</h4>
 			</div>
 			<div class="widget-body">
-				<a href="{{route('adm.noticia.cadastrar')}}" class="btn btn-warning">
+				<a href="{{route('adm.noticia.cadastro')}}" class="btn btn-warning">
 					<i class="icon-plus icon-white"></i> Nova Noticia
 				</a>
 				<br /><br />
@@ -33,6 +33,9 @@
 								<div class="btn-group">
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 									<ul class="dropdown-menu">
+										<li>
+											<a href="{{route('adm.noticia.visualizar',$n->id)}}"><i class="icon-pencil"></i> Visualizar</a>
+										</li>
 										<li>
 											<a href="{{route('adm.noticia.editar',$n->id)}}"><i class="icon-pencil"></i> Editar</a>
 										</li>

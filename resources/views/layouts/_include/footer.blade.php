@@ -36,6 +36,7 @@
     // initiate layout and plugins
     App.setMainPage(true);
     App.init();
+  
   });
 </script>
 <!-- END JAVASCRIPTS -->

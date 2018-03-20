@@ -11,7 +11,7 @@ class Cpa extends Model
     ];
 
 
-    public function membros(){
+    public function membro(){
       return $this->hasMany('App\Membro','cpas_id');
     }
 }

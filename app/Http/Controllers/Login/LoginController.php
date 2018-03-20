@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Login;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use Auth;
 class LoginController extends Controller
@@ -13,7 +14,7 @@ class LoginController extends Controller
 
     public function entrar(UserRequest $req){
       $dados = $req->all();
-      if(Auth::attemp(['email' => $dados['email'],'password'=>$dados['password']])){
+      if(Auth::attemp(['email' => $dados['email'],'password'=> $dados['password']])){
         return redirect()->route('/adm');
       }
     }

@@ -27,7 +27,7 @@ class CursoRequest extends FormRequest
             'nome' => 'required',
             'duracao' => 'required',
             'ch_total' => 'required',
-            'descricao' => 'required'
+            'descricao' => 'required',
         ];
     }
 
@@ -36,7 +36,7 @@ class CursoRequest extends FormRequest
           'nome.required' => 'É necessário informar o nome completo',
           'duracao.required' => 'É necessário informar o número de semestres do curso',
           'ch_total.required' => 'É necessário informar o total de carga horaria',
-          'descricao.required' => 'É necessário uma descrição sobre o curso'
+          'descricao.required' => 'É necessário uma descrição sobre o curso',
       ];
     }
 

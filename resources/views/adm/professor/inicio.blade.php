@@ -6,7 +6,7 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-				<h4><i class="icon-reorder"> </i>Professores cadastrados</h4>
+				<h4><i class="icon-reorder"> </i>Professores Cadastrados</h4>
 			</div>
 			<div class="widget-body">
 				<a href="{{url('adm/professor/cadastro')}}" class="btn btn-warning">

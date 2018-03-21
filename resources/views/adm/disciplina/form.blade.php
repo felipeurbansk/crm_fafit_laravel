@@ -9,7 +9,7 @@
 				@isset($curso)
 					<h4><i class="icon-pencil"> </i>Editar Curso </h4>
 				@else
-					<h4><i class="icon-plus"> </i>Cadastrar Curso </h4>
+					<h4><i class="icon-plus"> </i>Cadastrar novo Curso </h4>
 				@endif
 
 			</div>
@@ -31,11 +31,9 @@
         </div>
 
 				<div class="control-group @if($errors->has('duracao')) 'error' @endif">
-              <label class="control-label" for="duracao">Duração:</label>
+              <label class="control-label" for="duracao">Duração (Semestres):</label>
               <div class="controls">
-								<div class="input-prepend">
-                  <input type="text" class="span3" name="duracao" id="duracao" value="@isset($curso){{$curso->duracao}}@else{{old('duracao')}}@endisset"/><span class="add-on">Semestres</span>
-								</div>
+                  <input type="text" class="span1" name="duracao" id="duracao" value="@isset($curso){{$curso->duracao}}@else{{old('duracao')}}@endisset"/>
 									<br>
                   <span class="help-inline">{{$errors->first('duracao')}}</span>
               </div>
@@ -44,9 +42,7 @@
 				 <div class="control-group @if($errors->has('ch_total')) 'error' @endif ">
 							 <label class="control-label" for="ch_total">Carga Horaria:</label>
 							 <div class="controls">
-								 	 <div class="input-prepend">
-									 	<input type="text" class="span5" name="ch_total" id="ch_total" value="@isset($curso){{$curso->ch_total}}@else{{old('ch_total')}}@endisset"/><span class="add-on">Horas</span>
-									 </div>
+									 <input type="text" class="span1" name="ch_total" id="ch_total" value="@isset($curso){{$curso->ch_total}}@else{{old('ch_total')}}@endisset"/>
 									 <br>
 									 <span class="help-inline">{{$errors->first('ch_total')}}</span>
 							 </div>

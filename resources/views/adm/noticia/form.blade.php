@@ -5,7 +5,11 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-					<h4><i class="icon-plus"> </i>Nova notícia </h4>
+				@isset($noticia)
+					<h4><i class="icon-pencil"> </i>Alterar Notícia </h4>
+				@else
+					<h4><i class="icon-plus"> </i>Nova Notícia </h4>
+				@endisset
 			</div>
 			<div class="widget-body">
 

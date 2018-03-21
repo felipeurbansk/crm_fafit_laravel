@@ -6,8 +6,11 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-
-					<h4><i class="icon-plus"> </i>@isset($professor) Alterar usuário  @else Cadastrar novo professor @endisset</h4>
+				@isset($professor)
+					<h4><i class="icon-pencil"> </i>Alterar Professor</h4>
+				@else
+					<h4><i class="icon-plus"> </i>Cadastrar Professor</h4>
+				@endisset
 
 			</div>
 			<div class="widget-body">

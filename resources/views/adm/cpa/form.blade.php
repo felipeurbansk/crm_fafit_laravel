@@ -5,9 +5,11 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-
+				@isset($membro)
+					<h4><i class="icon-pencil"> </i>Alterar Colaborador </h4>
+				@else
 					<h4><i class="icon-plus"> </i>Novo Colaborador </h4>
-
+				@endisset
 			</div>
 			<div class="widget-body">
 

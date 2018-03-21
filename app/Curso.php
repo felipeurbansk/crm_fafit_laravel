@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Curso extends Model
 {
-
+    use SoftDeletes;
+    
     protected $fillable = [
       'nome','descricao','duracao','ch_total'
     ];
 
 
     public function disciplinas(){
-      return $this->belongsToMany('App\Disciplina','cursos_has_disciplinas','cursos_id','disciplinas_id');
+      return $this->belongsToMany('App\Disciplina','cursos_has_disciplinas','cursos_id','disciplinas_id')->withTimestamps();;
     }
 
 }

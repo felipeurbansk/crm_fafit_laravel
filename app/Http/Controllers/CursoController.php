@@ -17,7 +17,7 @@ class CursoController extends Controller
     public function cadastro(){
       return view('adm.curso.form');
     }
-    
+
     public function salvar(CursoRequest $req){
       if(Curso::create($req->all())) {
         return redirect()->route('adm.curso')->with('sucesso','Curso cadastrado com sucesso');
@@ -42,8 +42,11 @@ class CursoController extends Controller
 
     public function atualizar(CursoRequest $req){
       $curso = $req->all();
-      Curso::find($curso['id'])->update($curso);
-      return redirect()->route('adm.curso.visualizar',$curso['id']);
+      if(Curso::find($curso['id'])->update($curso)){
+        return redirect()->route('adm.curso')->with('sucesso','Curso alterado com sucesso');
+      }else{
+        return back;
+      }
     }
 
     public function excluir($id){

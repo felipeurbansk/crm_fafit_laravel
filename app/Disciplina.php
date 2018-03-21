@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Disciplina extends Model
 {
+    use SoftDeletes;
 
     protected $fillable = [
       'nome','semestres','descricao','ch'
@@ -14,7 +15,7 @@ class Disciplina extends Model
 
 
     public function cursos(){
-      return $this->hasmMany('App\Curso','cursos_has_disciplinas','disciplinas_id', 'cursos_id');
+      return $this->hasmMany('App\Curso','cursos_has_disciplinas','disciplinas_id', 'cursos_id')->withTimestamps();;
     }
 
     public function professor(){

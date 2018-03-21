@@ -20,13 +20,17 @@ class CpaController extends Controller
     }
 
     public function salvar(CpaRequest $req){
+      try{
         $cpa = Cpa::create($req->all());
 
         $membro = new Membro($req->all());
         $membro->cpa()->associate($cpa);
         $membro->save();
 
-        return redirect()->route('adm.cpa');
+        return redirect()->route('adm.cpa')->with('sucesso', 'Membro cadastrado com sucesso!');
+      }catch(Exception $e){
+        return back()->with('erro', 'Erro ao tentar cadastrar um novo membro');
+      }
     }
 
     public function editar($id){

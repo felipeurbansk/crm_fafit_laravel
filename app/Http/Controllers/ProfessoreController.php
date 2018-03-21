@@ -37,9 +37,12 @@ class ProfessoreController extends Controller
     public function atualizar(ProfessoreRequest $req){
       $professor = $req->all();
 
-      Professore::find($professor['id'])->update($professor);
+      if(Professore::find($professor['id'])->update($professor)){
+        return redirect()->route('adm.professor')->with('sucesso','Professor alterado com sucesso!');
+      }else{
+        return back()->with('erro','Erro ao tentar alterar o professor!');
+      }
 
-      return redirect()->route('adm.professor.visualizar',$professor['id']);
     }
 
     public function excluir($id){

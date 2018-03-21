@@ -38,6 +38,16 @@ Route::put('/adm/curso/atualizar/',['as'=> 'adm.curso.atualizar','uses'=>'CursoC
 Route::get('/adm/curso/excluir/{id}',['as'=> 'adm.curso.excluir','uses'=>'CursoController@excluir']);
 /*Fim rotas dos Cursos*/
 
+/*Rotas dos Disciplina*/
+Route::get('/adm/disciplina',['as'=>'adm.disciplina','uses'=>'DisciplinaController@index']);
+Route::get('/adm/disciplina/cadastro',['as'=>'adm.disciplina.cadastro','uses'=>'DisciplinaController@cadastro']);
+Route::post('/adm/disciplina/salvar',['as'=>'adm.disciplina.salvar','uses'=>'DisciplinaController@salvar']);
+Route::get('/adm/disciplina/editar/{id}',['as'=> 'adm.disciplina.editar','uses'=>'DisciplinaController@editar']);
+Route::get('/adm/disciplina/visualizar/{id}',['as'=> 'adm.disciplina.visualizar','uses'=>'DisciplinaController@visualizar']);
+Route::put('/adm/disciplina/atualizar/',['as'=> 'adm.disciplina.atualizar','uses'=>'DisciplinaController@atualizar']);
+Route::get('/adm/disciplina/excluir/{id}',['as'=> 'adm.disciplina.excluir','uses'=>'DisciplinaController@excluir']);
+/*Fim rotas dos Disciplina*/
+
 /*Rotas dos Professores*/
 Route::get('/adm/professor',['as'=>'adm.professor','uses'=>'ProfessoreController@index']);
 Route::get('/adm/professor/cadastro', ['as'=>'adm.professor.cadastro','uses'=>'ProfessoreController@cadastro']);

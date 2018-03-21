@@ -20,7 +20,8 @@ class NoticiaController extends Controller
     }
 
     public function salvar(NoticiaRequest $req){
-      $noticia = Noticia::create($req->all());
+      $noticia = $req->all();
+      $noticia = Noticia::create($noticia);
 
       return redirect()->route('adm.noticia');
     }

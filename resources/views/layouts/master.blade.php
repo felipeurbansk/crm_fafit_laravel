@@ -105,7 +105,22 @@
 
             <!-- END PAGE HEADER-->
             <!-- BEGIN PAGE CONTENT-->
-
+            @if(session('erro'))
+              <div class="alert alert-error">
+                <strong>Erro!</strong>
+                <ul>
+                  {{session('erro')}}
+                </ul>
+              </div>
+            @endif
+            @if(session('sucesso'))
+              <div class="alert alert-success">
+                <strong>Sucesso!</strong>
+                <ul>
+                  {{session('sucesso')}}
+                </ul>
+              </div>
+            @endif
             <!-- Conteudo -->
               @yield('content')
             <!-- Fim Conteudo -->

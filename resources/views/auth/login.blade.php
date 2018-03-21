@@ -1,14 +1,14 @@
 @include('layouts._include.header')
-<div class="login-header">
+
+<!-- BEGIN LOGIN -->
+<div id="login">
+  <!-- BEGIN LOGIN FORM -->
+
     <!-- BEGIN LOGO -->
     <div id="logo" class="center">
         <img src="img/logo.png" alt="logo" class="center" />
     </div>
     <!-- END LOGO -->
-</div>
-<!-- BEGIN LOGIN -->
-<div id="login">
-  <!-- BEGIN LOGIN FORM -->
   <form id="loginform" class="form-vertical no-padding no-margin"  method="POST" action="{{ route('login') }}">
     {{csrf_field()}}
     <div class="lock">
@@ -28,6 +28,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="control-group">
             <div class="controls">
                 <div class="input-prepend">

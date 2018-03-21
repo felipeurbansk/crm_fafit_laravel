@@ -25,18 +25,20 @@ class CursoRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'duracao' => 'required',
-            'ch_total' => 'required',
+            'duracao' => 'required|integer',
+            'ch_total' => 'required|numeric',
             'descricao' => 'required',
         ];
     }
 
     public function messages(){
       return [
-          'nome.required' => 'É necessário informar o nome completo',
-          'duracao.required' => 'É necessário informar o número de semestres do curso',
-          'ch_total.required' => 'É necessário informar o total de carga horaria',
-          'descricao.required' => 'É necessário uma descrição sobre o curso',
+          'nome.required' => '* É necessário informar o nome completo',
+          'duracao.required' => '* É necessário informar o número de semestres do curso',
+          'duracao.integer' => '* A duração é obrigatoriamente um valor inteiro',
+          'ch_total.required' => '* É necessário informar o total de carga horaria',
+          'ch_total.numeric' => '* A carga horaria é obrigatoriamente um valor descimal',
+          'descricao.required' => '* É necessário uma descrição sobre o curso',
       ];
     }
 

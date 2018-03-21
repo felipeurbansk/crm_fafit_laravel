@@ -17,10 +17,13 @@ class CursoController extends Controller
     public function cadastro(){
       return view('adm.curso.form');
     }
-
+    
     public function salvar(CursoRequest $req){
-      Curso::create($req->all());
-      return redirect()->route('adm.curso');
+      if(Curso::create($req->all())) {
+        return redirect()->route('adm.curso')->with('sucesso','Curso cadastrado com sucesso');
+      }else{
+        return back()->with('erro','Erro ao cadastrar o curso');
+      }
     }
 
     public function editar($id){
@@ -29,8 +32,12 @@ class CursoController extends Controller
     }
 
     public function visualizar($id){
-      $curso = Curso::find($id);
-      return view('adm.curso.visualizar',compact('curso'));
+      if($curso = Curso::find($id)){
+          return view('adm.curso.visualizar',compact('curso'));
+      }else{
+        return back;
+      }
+
     }
 
     public function atualizar(CursoRequest $req){

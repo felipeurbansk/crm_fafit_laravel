@@ -34,9 +34,6 @@
 										<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 										<ul class="dropdown-menu">
 											<li>
-												<a href="{{route('adm.cpa.visualizar',$c->id)}}"><i class="icon-pencil"></i> Visualizar</a>
-											</li>
-											<li>
 												<a href="{{route('adm.cpa.editar',$c->id)}}"><i class="icon-pencil"></i> Editar</a>
 											</li>
 											<li>

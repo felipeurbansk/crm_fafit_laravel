@@ -5,11 +5,11 @@
 	<div class="span12">
 		<div class="widget">
 			<div class="widget-title">
-				<h4><i class="icon-reorder"> </i>Cursos cadastrados</h4>
+				<h4><i class="icon-reorder"> </i>Disciplinas cadastrados</h4>
 			</div>
 			<div class="widget-body">
 				<a href="{{route('adm.disciplina.cadastro')}}" class="btn btn-warning">
-					<i class="icon-plus icon-white"></i> Cadastrar Curso
+					<i class="icon-plus icon-white"></i> Cadastrar Disciplina
 				</a>
 				<br /><br />
 				<table class="table table-striped table-bordered table-hover ">
@@ -17,28 +17,31 @@
 						<tr class="table-grey-head">
 							<th width="22%">Disciplina</th>
 							<th width="22%">Descrição</th>
-							<th width="10%">Duração</th>
 							<th width="10%">Carga Horaria</th>
+							<th width="10%">Professor</th>
 							<th width="10%">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach($disciplina as $d)
 						<tr class="odd gradeX">
-							<input type="hidden" name="id" value="{{$c->id}}">
+							<input type="hidden" name="id" value="{{$d->id}}">
 							<td width="22%">{{$d->nome}}</td>
 							<td width="22%">{{str_limit($d->descricao,50)}}</td>
-							<td width="10%">{{$d->duracao}} Anos</td>
-							<td width="10%">{{$d->ch_total}}</td>
+							<td width="10%">{{$d->ch}}</td>
+							<td width="10%">{{$d->professor->nome}}</td>
 							<td width="10%">
 								<div class="btn-group">
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 									<ul class="dropdown-menu">
 										<li>
+											<a data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-eye-open"></i> Ver cursos</a>
+										</li>
+										<li>
 											<a href="{{route('adm.disciplina.editar',$d->id)}}"><i class="icon-pencil"></i> Editar</a>
 										</li>
 										<li>
-											<a href="{{route('adm.curso.excluir',$d->id)}}"><i class="icon-remove"></i> Deletar</a>
+											<a href="{{route('adm.disciplina.excluir',$d->id)}}"><i class="icon-remove"></i> Deletar</a>
 										</li>
 									</ul>
 								</div>
@@ -53,7 +56,26 @@
 					</div>
 					<div class="span6">
 						<div class="pagination" style="text-align: right;">
-							
+
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								...
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
 						</div>
 					</div>
 				</div>

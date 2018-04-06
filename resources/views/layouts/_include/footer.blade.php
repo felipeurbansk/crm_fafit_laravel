@@ -34,9 +34,9 @@
 <script>
   jQuery(document).ready(function() {
     // initiate layout and plugins
+    $("#message_info").fadeOut(3000);
     App.setMainPage(true);
     App.init();
-  
   });
 </script>
 <!-- END JAVASCRIPTS -->

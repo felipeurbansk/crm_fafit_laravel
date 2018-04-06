@@ -68,13 +68,13 @@
   			<!-- END RESPONSIVE QUICK SEARCH FORM -->
   			<!-- BEGIN SIDEBAR MENU -->
         <ul class="sidebar-menu">
-           <li class="has-sub"><a class="" href="{{route('inicio')}}"><span class="icon-box"><i class="icon-dashboard"></i></span>Dashboard</a></li>
-           <li class="has-sub"><a class="" href="{{route('adm.curso')}}"><span class="icon-box"><i class="icon-book"></i></span>Cursos</a></li>
-           <li class="has-sub"><a class="" href="{{route('adm.disciplina')}}"><span class="icon-box"><i class="icon-beaker"></i></span>Disciplinas</a></li>
-           <li class=""><a class="" href="{{route('adm.professor')}}"><span class="icon-box"><i class="icon-user"></i></span>Professores</a></li>
-           <li class="has-sub"><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-star"></i></span>CPA</a></li>
-           <li class=""><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-bullhorn"></i></span>Notícias</a></li>
-           <li class=""><a class="" href="{{route('adm.calendario')}}"><span class="icon-box"><i class="icon-calendar"></i></span>Calendario</a></li>
+           <li><a class="" href="{{route('inicio')}}"><span class="icon-box"><i class="icon-dashboard"></i></span>Dashboard</a></li>
+           <li><a class="" href="{{route('adm.curso')}}"><span class="icon-box"><i class="icon-book"></i></span>Cursos</a></li>
+           <li><a class="" href="{{route('adm.disciplina')}}"><span class="icon-box"><i class="icon-beaker"></i></span>Disciplinas</a></li>
+           <li><a class="" href="{{route('adm.professor')}}"><span class="icon-box"><i class="icon-user"></i></span>Professores</a></li>
+           <li><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-star"></i></span>CPA</a></li>
+           <li><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-bullhorn"></i></span>Notícias</a></li>
+           <li><a class="" href="{{route('adm.calendario')}}"><span class="icon-box"><i class="icon-calendar"></i></span>Calendario</a></li>
          </ul>
          <!-- END SIDEBAR MENU -->
       </div>
@@ -106,22 +106,24 @@
 
             <!-- END PAGE HEADER-->
             <!-- BEGIN PAGE CONTENT-->
-            @if(session('erro'))
-              <div class="alert alert-error">
-                <strong>Erro!</strong>
-                <ul>
-                  {{session('erro')}}
-                </ul>
-              </div>
-            @endif
-            @if(session('sucesso'))
-              <div class="alert alert-success">
-                <strong>Sucesso!</strong>
-                <ul>
-                  {{session('sucesso')}}
-                </ul>
-              </div>
-            @endif
+            <div id="message_info">
+              @if(session('erro'))
+                <div class="alert alert-error">
+                  <strong>Erro!</strong>
+                  <ul>
+                    {{session('erro')}}
+                  </ul>
+                </div>
+              @endif
+              @if(session('sucesso'))
+                <div class="alert alert-success">
+                  <strong>Sucesso!</strong>
+                  <ul>
+                    {{session('sucesso')}}
+                  </ul>
+                </div>
+              @endif
+            </div>
             <!-- Conteudo -->
               @yield('content')
             <!-- Fim Conteudo -->

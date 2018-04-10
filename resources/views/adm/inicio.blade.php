@@ -72,8 +72,24 @@
                         </div>
                   </div>
                </div>
-                <!-- BEGIN INLINE NOTIFICATIONS widget-->
-                <!-- END INLINE NOTIFICATIONS widget-->
+               <!-- BEGIN SITE VISITS PORTLET-->
+               <div class="widget">
+                   <div class="widget-title">
+                       <h4><i class="icon-bar-chart"></i> Line Chart</h4>
+                       <span class="tools">
+                       <a href="javascript:;" class="icon-chevron-down"></a>
+                       <a href="javascript:;" class="icon-remove"></a>
+                       </span>
+                   </div>
+                   <div class="widget-body">
+                       <div id="site_statistics_loading">
+                           <img src="img/loading.gif" alt="loading" />
+                       </div>
+                       <div id="site_statistics_content" class="hide">
+                           <div id="site_statistics" class="chart"></div>
+                       </div>
+                   </div>
+               </div>
              </div>
 </div>
 @endsection

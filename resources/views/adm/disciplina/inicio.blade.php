@@ -35,7 +35,7 @@
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 									<ul class="dropdown-menu">
 										<li>
-											<a data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-eye-open"></i> Ver cursos</a>
+											<a data-toggle="modal" data-target="#modalDisciplina"><i class="icon-eye-open"></i> Ver cursos</a>
 										</li>
 										<li>
 											<a href="{{route('adm.disciplina.editar',$d->id)}}"><i class="icon-pencil"></i> Editar</a>
@@ -60,11 +60,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal fade" id="modalDisciplina" tabindex="-1" role="dialog" aria-labelledby="Disciplina" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+								<h5 class="modal-title" id="exampleModalLongTitle">Disciplina</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -73,8 +73,7 @@
 								...
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
+								<button type="button" class="btn btn-primary">Fechar</button>
 							</div>
 						</div>
 					</div>

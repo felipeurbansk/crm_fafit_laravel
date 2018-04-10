@@ -21,9 +21,11 @@ class NoticiaController extends Controller
 
     public function salvar(NoticiaRequest $req){
       $noticia = $req->all();
-      $noticia = Noticia::create($noticia);
-
-      return redirect()->route('adm.noticia');
+      if($noticia = Noticia::create($noticia)){
+        return redirect()->route('adm.noticia')->with('sucesso','Noticía <strong>'.$noticia->titulo.'</strong> adicionada ao site');
+      }else{
+        return back()->with('error','Não foi possível adicionar a noticía. Tente novamente!');
+      }
     }
 
     public function editar($id){

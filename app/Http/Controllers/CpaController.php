@@ -44,8 +44,11 @@ class CpaController extends Controller
     }
 
     public function atualizar(CpaRequest $req){
-        /*$cpa = $req->all();
-        $cpa = Cpa::find($cpa['id'])->update($cpa);
+        $membro = $req->all();
+        $membro = Membro::find($membro['id']);
+        $cpa = Cpa::find($membro->cpas_id)->update($req->all());
+        $membro->update($req->all());
+        /*
         $membro = Membro::find($cpa['id'])->update($req->all());
         $membro->save();
         */

@@ -10,18 +10,20 @@ class ProfessoreController extends Controller
 {
 
     public function index(){
-      $professor = Professore::orderBy('nome','asc')->paginate(5);
-      return view('adm.professor.inicio',compact('professor'));
+        $professor = Professore::orderBy('nome','asc')->paginate(5);
+        return view('adm.professor.inicio',compact('professor'));
     }
 
     public function cadastro(){
-      return view('adm.professor.form');
+        return view('adm.professor.form');
     }
 
     public function salvar(ProfessoreRequest $req){
-      Professore::create($req->all());
-
-      return redirect()->route('adm.professor');
+      if(Professore::create($req->all())){
+        return redirect()->route('adm.professor')->with('sucesso','Professor cadastrado com sucesso!');
+      }else{
+        return back()->with('error','Não foi possivel cadastrar o professor');
+      }
     }
 
     public function visualizar($id){
@@ -36,7 +38,6 @@ class ProfessoreController extends Controller
 
     public function atualizar(ProfessoreRequest $req){
       $professor = $req->all();
-
       if(Professore::find($professor['id'])->update($professor)){
         return redirect()->route('adm.professor')->with('sucesso','Professor alterado com sucesso!');
       }else{
@@ -46,9 +47,11 @@ class ProfessoreController extends Controller
     }
 
     public function excluir($id){
-      Professore::find($id)->delete();
-
-      return redirect()->route('adm.professor');
+      if(Professore::find($id)->delete()){
+        return redirect()->route('adm.professor')->with('sucesso','Professor excluido com sucesso!');
+      }else{
+        return back()->with('error','Não foi possivel excluir o professor.');
+      }
     }
 
 }

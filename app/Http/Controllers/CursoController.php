@@ -4,31 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Curso;
+use App\Disciplina;
 use App\Http\Requests\CursoRequest;
+use DB;
 
 class CursoController extends Controller
 {
 
     public function index(){
-      $curso = Curso::orderBy('nome','asc')->paginate(5);
+      $curso = Curso::orderBy('nome','desc')->paginate(5);
       return view('adm.curso.inicio',compact('curso'));
     }
 
     public function cadastro(){
-      return view('adm.curso.form');
+      $disciplina = Disciplina::orderBy('nome','desc')->get();
+      return view('adm.curso.form',compact('disciplina'));
     }
 
     public function salvar(CursoRequest $req){
-      if(Curso::create($req->all())) {
+      
+      DB::beginTransaction();
+      try{
+        $c = Curso::create($req->all());
+        $c->disciplinas()->attach($req['disciplina']);
+        DB::commit();
         return redirect()->route('adm.curso')->with('sucesso','Curso cadastrado com sucesso');
-      }else{
+      }catch(Exception $e){
+        DB::rollback();
         return back()->with('erro','Erro ao cadastrar o curso');
       }
     }
 
     public function editar($id){
       $curso = Curso::find($id);
-      return view('adm.curso.form',compact('curso'));
+      $disciplina  = Disciplina::orderBy('nome','asc')->get();
+      return view('adm.curso.form',compact('curso','disciplina'));
     }
 
     public function visualizar($id){

@@ -15,7 +15,7 @@ class Disciplina extends Model
 
 
     public function cursos(){
-      return $this->belongsToMany('App\Curso','cursos_has_disciplinas','disciplinas_id', 'cursos_id');
+      return $this->belongsToMany('App\Curso');
     }
 
     public function professor(){

@@ -19,23 +19,32 @@ class DisciplinaController extends Controller
     }
 
     public function salvar(DisciplinaRequest $req){
-      $prof = Professore::find($req->input('professore_id'));
-      if($prof->disciplinas()->create(($req->all()))){
+      DB::beginTransaction();
+      try{
+        $prof->disciplinas()->create(($req->all()));
+        DB::commit();
         return redirect()->route('adm.disciplina')->with('sucesso', 'Disciplina cadastrado com sucesso');
-      }else{
-        return back()->with('error', 'Disciplina não foi cadastrado com sucesso');
+      }catch(Exception $e){
+        DB::rollback();
+        return back()->with('error', 'Disciplina não foi cadastrado com sucesso'); 
       }
     }
 
     public function excluir($id){
-      if(Disciplina::find($id)->delete()){
+      
+      DB::beginTransaction();
+      
+      try{
+        Disciplina::find($id)->delete();
+        DB::commit();
         return redirect()->route('adm.disciplina')->with('sucesso', 'Disciplina excluida com sucesso');
-      }else{
+      }catch(Exception $e){
+        DB::rollback();
         return back()->with('error', 'Disciplina não pode ser excluida');
       }
     }
 
     public function atualizar(DisciplinaRequest $req){
-
+      
     }
 }

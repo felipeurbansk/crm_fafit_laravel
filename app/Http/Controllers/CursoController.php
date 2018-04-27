@@ -37,8 +37,14 @@ class CursoController extends Controller
 
     public function editar($id){
       $curso = Curso::find($id);
+      $vetDisc = [];
+
+      foreach($curso->disciplinas as $d){
+        $vetDisc[] = $d->id;
+      }
+
       $disciplina  = Disciplina::orderBy('nome','asc')->get();
-      return view('adm.curso.form',compact('curso','disciplina'));
+      return view('adm.curso.form',compact('curso','disciplina','vetDisc'));
     }
 
     public function visualizar($id){
@@ -52,10 +58,15 @@ class CursoController extends Controller
 
     public function atualizar(CursoRequest $req){
       $curso = $req->all();
-      if(Curso::find($curso['id'])->update($curso)){
+      DB::beginTransaction();
+      try{
+        $c = Curso::with(['disciplinas'])->find($req->input('id'));
+        $c->disciplinas()->sync($curso['disciplina']);
+        DB::commit();
         return redirect()->route('adm.curso')->with('sucesso','Curso alterado com sucesso');
-      }else{
-        return back;
+      }catch(Exception $e){
+        DB::rollback();
+        return back()->with('erro','Erro ao atualizar o curso');
       }
     }
 

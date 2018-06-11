@@ -28,8 +28,8 @@
 						</div>
 					</div>
 
-					<div class="control-group {{$errors->has('corpo') ? 'error' : ''}}">
-						<label class="control-label" for="corpo">Resumo:</label>
+					<div class="control-group {{$errors->has('resumo') ? 'error' : ''}}">
+						<label class="control-label" for="resumo">Resumo:</label>
 						<div class="controls">
 							<textarea class="span5" rows="3" name="resumo" id="resumo">@isset($noticia){{$noticia->resumo}}@else{{old('resumo')}}@endisset</textarea>
 							<br>
@@ -61,26 +61,14 @@
 							<span class="help-inline"></span>
 						</div>
 					</div>
-					<div class="control-group {{$errors->has('resumo') ? 'error' : ''}}">
-						<label class="control-label" for="resumo">Corpo:</label>
+					<div class="control-group {{$errors->has('corpo') ? 'error' : ''}}">
+						<label class="control-label" for="corpo">Corpo:</label>
 						<div class="controls">
 							<textarea class="span5" rows="5" name="corpo" id="corpo" >@isset($noticia){{$noticia->corpo}}@else{{old('corpo')}}@endisset</textarea>
 							<br>
 							<span class="help-inline">{{$errors->first('corpo')}}</span>
 						</div>
 					</div>
-					<div class="control-group {{$errors->has('autor') ? 'error' : ''}}">
-						<label class="control-label" for="img">Autor:</label>
-						<div class="controls">
-							<select class="span5" name="autor">
-								<option value="cpa">CPA</option>
-								<option value="cpa" {{isset($noticia) && $noticia->eh_coordenador == 1 ? 'selected' : ''}} >Coordenador</option>
-							</select>
-							<br>
-							<span class="help-inline">{{$errors->first('autor')}}</span>
-						</div>
-					</div>
-
 					<div class="form-actions">
 						<button type="submit" class="btn blue"><i class="icon-ok"></i> Salvar</button>
 						<a href="{{route('adm.noticia')}}">ou cancelar</a>

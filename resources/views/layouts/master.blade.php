@@ -72,8 +72,9 @@
            <li><a class="" href="{{route('adm.curso')}}"><span class="icon-box"><i class="icon-book"></i></span>Cursos</a></li>
            <li><a class="" href="{{route('adm.disciplina')}}"><span class="icon-box"><i class="icon-beaker"></i></span>Disciplinas</a></li>
            <li><a class="" href="{{route('adm.professor')}}"><span class="icon-box"><i class="icon-user"></i></span>Professores</a></li>
-           <li><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-star"></i></span>CPA</a></li>
+           <li><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-group"></i></span>CPA</a></li>
            <li><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-bullhorn"></i></span>Notícias</a></li>
+           <li><a class="" href="{{route('adm.slide')}}"><span class="icon-box"><i class="icon-camera-retro"></i></span>Slide</a></li>
            <li><a class="" href="{{route('adm.calendario')}}"><span class="icon-box"><i class="icon-calendar"></i></span>Calendario</a></li>
          </ul>
          <!-- END SIDEBAR MENU -->
@@ -89,7 +90,7 @@
                   <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                    <h3 class="page-title">
                      {{substr(config('app.instituicao'),0,5)}}
-                     <small>{{substr(config('app.instituicao'),6)}}</small>
+                     <small>{{substr(config('app.instituicao'),5)}}</small>
                   </h3>
                    <ul class="breadcrumb">
                        <li>

@@ -18,10 +18,23 @@ class ProfessoreController extends Controller
         return view('adm.professor.form');
     }
 
-    public function salvar(ProfessoreRequest $req){
-      if(Professore::create($req->all())){
+    public function salvar(Request $req){
+      DB::beginTransaction();
+      $professor = $req->all();
+      try{
+        $nameFile = null;
+        if ($req->hasFile('img') && $req->file('img')->isValid()) {
+          $name = uniqid(date('HisYmd'));
+          $extension = $req->img->extension();
+          $nameFile = "{$name}.{$extension}";
+          $upload = $req->img->storeAs('professor/foto', $nameFile);
+        }
+        $professor['img'] = "storage/".$upload;
+        Professore::create($professor);
+        DB::commit();
         return redirect()->route('adm.professor')->with('sucesso','Professor cadastrado com sucesso!');
-      }else{
+      }catch(Exception $e){
+        DB::rollback();
         return back()->with('error','Não foi possivel cadastrar o professor');
       }
     }
@@ -36,20 +49,36 @@ class ProfessoreController extends Controller
       return view('adm.professor.form',compact('professor'));
     }
 
-    public function atualizar(ProfessoreRequest $req){
-      $professor = $req->all();
-      if(Professore::find($professor['id'])->update($professor)){
+    public function atualizar(Request $req){
+      DB::beginTransaction();
+
+      try{
+        $nameFile = null;
+        if ($req->hasFile('img') && $req->file('img')->isValid()) {
+          $name = uniqid(date('HisYmd'));
+          $extension = $req->img->extension();
+          $nameFile = "{$name}.{$extension}";
+          $upload = $req->img->storeAs('professor/foto', $nameFile);
+        }
+        $professor['img'] = "storage/".$upload;
+        Professore::find($req['id'])->update($req->all());
+        DB::commit();
         return redirect()->route('adm.professor')->with('sucesso','Professor alterado com sucesso!');
-      }else{
+      }catch(Exception $e){
+        DB::rollback();
         return back()->with('erro','Erro ao tentar alterar o professor!');
       }
 
     }
 
     public function excluir($id){
-      if(Professore::find($id)->delete()){
+      DB::beginTransaction();
+      try{
+        Professore::find($id)->delete();
+        DB::commit();
         return redirect()->route('adm.professor')->with('sucesso','Professor excluido com sucesso!');
-      }else{
+      }catch(Exception $e){
+        DB::rollback();
         return back()->with('error','Não foi possivel excluir o professor.');
       }
     }

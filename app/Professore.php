@@ -10,7 +10,7 @@ class Professore extends Model
   use SoftDeletes;
 
   protected $fillable = [
-    'nome','titulacao','descricao','img','coordenador'
+    'nome','titulacao','descricao','img','coordenador','facebook','linkedin','google'
   ];
 
   public function disciplinas(){

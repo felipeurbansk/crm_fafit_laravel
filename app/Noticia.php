@@ -9,7 +9,7 @@ class Noticia extends Model
     use SoftDeletes;
     
     protected $fillable = [
-        'titulo','corpo','resumo','data','palavras_chaves','eh_cpa','eh_coordenador'
+        'titulo','corpo','resumo','data','palavras_chaves'
     ];
 
     public function midias(){

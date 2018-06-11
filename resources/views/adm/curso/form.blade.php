@@ -13,7 +13,7 @@
 
 			</div>
 			<div class="widget-body">
-				<form action="@isset($curso){{route('adm.curso.atualizar')}}@else{{route('adm.curso.salvar')}}@endisset" method="post" class="form-horizontal">
+				<form action="@isset($curso){{route('adm.curso.atualizar')}}@else{{route('adm.curso.salvar')}}@endisset" method="post" class="form-horizontal" enctype="multipart/form-data">
 					@csrf
 					@isset($curso)
 					<input type="hidden" name="_method" value="put">
@@ -31,7 +31,7 @@
 						<label class="control-label" for="duracao">Duração:</label>
 						<div class="controls">
 							<div class="input-prepend">
-								<input type="text" class="span3" name="duracao" id="duracao" value="@isset($curso){{$curso->duracao}}@else{{old('duracao')}}@endisset"/><span class="add-on">Semestres</span>
+								<input type="text" class="span3" name="duracao" id="duracao" value="@isset($curso){{$curso->duracao}}@else{{old('duracao')}}@endisset"/><span class="add-on">Anos</span>
 							</div>
 							<br>
 							<span class="help-inline">{{$errors->first('duracao')}}</span>
@@ -41,11 +41,18 @@
 						<label class="control-label" for="ch_total">Carga Horaria:</label>
 						<div class="controls">
 							<div class="input-prepend">
-								<input type="text" class="span5" name="ch_total" id="ch_total" value="@isset($curso){{$curso->ch_total}}@else{{old('ch_total')}}@endisset"/><span class="add-on">Horas</span>
+								<input type="text" class="span3" name="ch_total" id="ch_total" value="@isset($curso){{$curso->ch_total}}@else{{old('ch_total')}}@endisset"/><span class="add-on">Horas</span>
 							</div>
 							<br>
 							<span class="help-inline">{{$errors->first('ch_total')}}</span>
 						</div>
+					</div>
+					<div class="control-group ">
+								<label class="control-label" for="img">Imagem:</label>
+								<div class="controls">
+									<input type="file" class="span5" name="img" value="@isset($curso){{$curso->img}}@else{{old('img')}}@endisset"/>
+									<span class="help-inline"></span>
+								</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Selecione as disciplinas</label>

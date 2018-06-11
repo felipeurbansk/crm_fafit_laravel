@@ -57,7 +57,7 @@
 								@endforeach
 							</select>
 							<br>
-							<span class="help-inline">{{$errors->first('descricao')}}</span>
+							<span class="help-inline">{{$errors->first('professore_id')}}</span>
 						</div>
 					</div>
 

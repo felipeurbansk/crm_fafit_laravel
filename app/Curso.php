@@ -9,7 +9,7 @@ class Curso extends Model
     use SoftDeletes;
     
     protected $fillable = [
-      'nome','descricao','duracao','ch_total'
+      'nome','descricao','duracao','ch_total','img'
     ];
 
 

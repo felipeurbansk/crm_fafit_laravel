@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\DisciplinaRequest;
 use App\Disciplina;
 use App\Professore;
+use DB;
 
 class DisciplinaController extends Controller
 {
@@ -21,7 +22,8 @@ class DisciplinaController extends Controller
     public function salvar(DisciplinaRequest $req){
       DB::beginTransaction();
       try{
-        $prof->disciplinas()->create(($req->all()));
+        $prof = Professore::find($req->input('professore_id'));
+        $prof->disciplinas()->create($req->all());
         DB::commit();
         return redirect()->route('adm.disciplina')->with('sucesso', 'Disciplina cadastrado com sucesso');
       }catch(Exception $e){
@@ -31,9 +33,7 @@ class DisciplinaController extends Controller
     }
 
     public function excluir($id){
-      
       DB::beginTransaction();
-      
       try{
         Disciplina::find($id)->delete();
         DB::commit();

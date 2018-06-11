@@ -36,21 +36,21 @@
               </div>
          </div>
         <div class="control-group ">
-						<label class="control-label">Foto(Opcional):</label>
-								<div class="controls">
-												<div class="input-append">
-															<input type="file" name="img" id="img" value="@isset($membro){{$membro->cpa->img}}@else{{old('img')}}@endisset">
-												</div>
-								</div>
-          </div>
-					<div class="control-group {{$errors->has('descricao') ? 'error' : ''}}">
-								<label class="control-label">Descrição</label>
-								<div class="controls">
-									 <textarea class="span6" name="descricao" id="descricao" rows="6" >@isset($membro){{$membro->cpa->descricao}}@else{{old('descricao')}}@endisset</textarea>
-									 <br>
-									 <span class="help-inline">{{$errors->first('descricao')}}</span>
-								</div>
-          </div>
+			<label class="control-label">Foto(Opcional):</label>
+			<div class="controls">
+				<div class="input-append">
+					<input type="file" name="img" id="img" value="@isset($membro){{$membro->cpa->img}}@else{{old('img')}}@endisset">
+				</div>
+			</div>
+		</div>
+		<div class="control-group {{$errors->has('descricao') ? 'error' : ''}}">
+			<label class="control-label">Descrição</label>
+			<div class="controls">
+				<textarea class="span6" name="descricao" id="descricao" rows="6" >@isset($membro){{$membro->cpa->descricao}}@else{{old('descricao')}}@endisset</textarea>
+				<br>
+				<span class="help-inline">{{$errors->first('descricao')}}</span>
+			</div>
+		</div>
 
           <div class="form-actions">
                 <button type="submit" class="btn blue"><i class="icon-ok"></i> Salvar</button>

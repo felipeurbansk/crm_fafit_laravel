@@ -13,8 +13,16 @@ return [
     |
     */
 
-    'tituloSite' => env('tituloSite', 'Fafit - Faculdades Integradas de Itararé | Gradução, Pós-Graduação e Cursos Técnicos Profissionalizantes'),
-
+    'tituloSite'    => env('tituloSite', 'Fafit - Faculdades Integradas de Itararé | Gradução, Pós-Graduação e Cursos Técnicos Profissionalizantes'),
+    'instituicao'   => env('instituicao','FAFIT- Faculdades Integradas de Itararé'),
+    'endereco'      => env('endereco','Rua. João Batista Veiga, 1725'),
+    'cidade'        => env('cidade','Itararé-SP'),
+    'telefone'      => env('telefone','(15) 3531-8484'),
+    'email'         => env('email','contato@fafit.com.br'),
+    'facebook'      => env('facebook','https://www.facebook.com/fafitoficial/'),
+    'twitter'       => env('twitter','https://www.twitter.com/fafitoficial/'),
+    'linkdin'       => env('linkedin','https://www.linkedin.com/fafitoficial/'),
+    'google'        => env('google','https://www.google.com/fafitoficial/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -79,7 +87,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-br',
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt-br',
 
     /*
     |--------------------------------------------------------------------------

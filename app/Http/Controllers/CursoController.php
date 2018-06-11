@@ -21,11 +21,19 @@ class CursoController extends Controller
       return view('adm.curso.form',compact('disciplina'));
     }
 
-    public function salvar(CursoRequest $req){
-      
+    public function salvar(Request $req){
       DB::beginTransaction();
+      $curso = $req->all();
       try{
-        $c = Curso::create($req->all());
+        $nameFile = null;
+        if ($req->hasFile('img') && $req->file('img')->isValid()) {
+          $name = uniqid(date('HisYmd'));
+          $extension = $req->img->extension();
+          $nameFile = "{$name}.{$extension}";
+          $upload = $req->img->storeAs('curso/foto', $nameFile);
+        }
+        $curso['img'] = "storage/".$upload;
+        $c = Curso::create($curso);
         $c->disciplinas()->attach($req['disciplina']);
         DB::commit();
         return redirect()->route('adm.curso')->with('sucesso','Curso cadastrado com sucesso');
@@ -37,14 +45,9 @@ class CursoController extends Controller
 
     public function editar($id){
       $curso = Curso::find($id);
-      $vetDisc = [];
-
-      foreach($curso->disciplinas as $d){
-        $vetDisc[] = $d->id;
-      }
 
       $disciplina  = Disciplina::orderBy('nome','asc')->get();
-      return view('adm.curso.form',compact('curso','disciplina','vetDisc'));
+      return view('adm.curso.form',compact('curso','disciplina'));
     }
 
     public function visualizar($id){

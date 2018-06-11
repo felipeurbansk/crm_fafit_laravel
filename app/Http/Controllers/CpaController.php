@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CpaRequest;
 use App\Cpa;
 use App\Membro;
+use DB;
 
 class CpaController extends Controller
 {
@@ -20,15 +21,16 @@ class CpaController extends Controller
     }
 
     public function salvar(CpaRequest $req){
+      DB::beginTransaction();
       try{
         $cpa = Cpa::create($req->all());
-
         $membro = new Membro($req->all());
         $membro->cpa()->associate($cpa);
         $membro->save();
-
+        DB::commit();
         return redirect()->route('adm.cpa')->with('sucesso', 'Membro cadastrado com sucesso!');
       }catch(Exception $e){
+        DB::rollback();
         return back()->with('erro', 'Erro ao tentar cadastrar um novo membro');
       }
     }
@@ -44,21 +46,32 @@ class CpaController extends Controller
     }
 
     public function atualizar(CpaRequest $req){
+      DB::beginTransaction();
+      try{
         $membro = $req->all();
         $membro = Membro::find($membro['id']);
         $cpa = Cpa::find($membro->cpas_id)->update($req->all());
         $membro->update($req->all());
-        /*
-        $membro = Membro::find($cpa['id'])->update($req->all());
-        $membro->save();
-        */
-        return redirect()->route('adm.cpa');
+        DB::commit();
+        return redirect()->route('adm.cpa')->with('sucesso', 'CPA cadastrado com sucesso');
+      }catch(Exception $e){
+        DB::rollback();
+        return back()->with('error', 'CPA cadastrado com sucesso');
+      }
     }
 
     public function excluir($id){
+      DB::beginTransaction();
+      try{
         $membro = Membro::find($id);
         $membro->delete();
         $membro->cpa()->delete();
-        return redirect()->route('adm.cpa');
+        DB::commit();
+        return redirect()->route('adm.cpa')->with('sucesso', 'CPA excluido com sucesso');;
+      }catch(Exception $e){
+        DB::rollback();
+        return back()->with('error', 'CPA não foi excluido com sucesso');
+      }
+        
     }
 }

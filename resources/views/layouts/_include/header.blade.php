@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->AS <html lang="pt-br"> <!--<![endif]-->
+<!--[if IE 8]> <html lang="{{config('app.locale')}}" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="{{config('app.locale')}}" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->AS <html lang="{{config('app.locale')}}"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />

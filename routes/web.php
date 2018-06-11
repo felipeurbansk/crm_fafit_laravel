@@ -105,8 +105,11 @@ Route::group(['middleware' => 'auth'],function(){
     /* Rotas de navegação */
     Route::get('/', ['as'=>'site.index','uses'=>'SiteController@index']);
     Route::get('/cursos', ['as'=>'site.cursos','uses'=>'SiteController@cursos']);
-    Route::get('/professor', ['as'=>'site.professor','uses'=>'SiteController@professor']);
-    Route::get('/noticias', ['as'=>'site.noticia','uses'=>'SiteController@noticia']);
+    Route::get('/curso/{id}', ['as'=>'site.curso','uses'=>'SiteController@curso']);
+    Route::get('/professores', ['as'=>'site.professores','uses'=>'SiteController@professores']);
+    Route::get('/professor/{id}', ['as'=>'site.professor','uses'=>'SiteController@professor']);
+    Route::get('/noticias', ['as'=>'site.noticias','uses'=>'SiteController@noticias']);
+    Route::get('/noticia/{id}', ['as'=>'site.noticia','uses'=>'SiteController@noticia']);
     Route::get('/contato', ['as'=>'site.contato','uses'=>'SiteController@contato']);
     /* Fim rotas navegação */
 

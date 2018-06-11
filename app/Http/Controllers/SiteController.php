@@ -21,4 +21,40 @@ class SiteController extends Controller
         $cpa = Cpa::all();
         return view('public.index',compact('slide','noticia','curso','professor','cpa','disciplina'));
     }
+
+    public function cursos(){
+        $cursos = Curso::orderBy('nome','desc')->paginate(6);
+        return view('public.cursos',compact('cursos'));
+    }
+
+    public function curso($id){
+        $curso = Curso::find($id);
+        return view('public.curso_detalhe',compact('curso'));
+    }
+
+    public function professores(){
+        $professores = Professore::orderBy('nome','desc')->paginate(4);
+        return view('public.professores',compact('professores'));
+    }
+
+    public function professor($id){
+        $professor = Professore::find($id);
+        $professores = Professore::where('id','<>',$professor->id)->orderBy('nome','desc')->get();
+        return view('public.professor',compact('professor','professores'));
+    }
+
+    public function noticias(){
+        $noticias = Noticia::orderBy('data','desc')->paginate(6);
+        return view('public.noticias',compact('noticias'));
+    }
+
+    public function noticia($id){
+        $noticia = Noticia::find($id);
+        $noticias = Noticia::where('id','<>',$id)->orderBy('data','desc')->get();
+        return view('public.noticia',compact('noticia','noticias'));
+    }
+
+    public function contato(){
+        return view('public.contato');
+    }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Membro extends Model
 {
     use SoftDeletes;
+    
     protected $fillable = [
         'nome','cargos'
     ];

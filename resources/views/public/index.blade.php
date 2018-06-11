@@ -79,7 +79,6 @@
                                 <i class="icofont icofont-hat"></i>
                             </div>
                         </div>
-                        <p>Contamos com {{$curso->count()}} cursos.</p>
                     </div>
                 </div>
             </div>
@@ -95,9 +94,9 @@
                                     </div>
                                     <div class="over-shadow"></div>
                                 </div>
-                                <h4><a href="course-single.html">{{$c->nome}}</a></h4>
+                                <h4><a href="{{route('site.curso',$c->id)}}">{{$c->nome}}</a></h4>
                                 <p>{{str_limit($c->descricao,350)}}</p>
-                                <a class="btn btn-primary my-btn" href="#" role="button">Continuar lendo</a>
+                                <a class="btn btn-primary my-btn" href="{{route('site.curso',$c->id)}}" role="button">Detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -140,10 +139,10 @@
                 <div class="col-md-3 col-sm-6 col-6">
                     <div class="counter-col animated fadeInUpShort slow delay-750">
                         <div class="counter">
-                            <i class="icofont icofont-people"></i>
-                            <div class="count">{{$cpa->count()}}</div>
+                            <i class="icofont icofont-megaphone"></i>
+                            <div class="count">{{$noticia->count()}}</div>
                         </div>
-                        <p>CPA</p>
+                        <p>Noticias</p>
                     </div>
                 </div>
             </div>

@@ -30,8 +30,6 @@
                                 <a href="{{config('app.facebook')}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 <a href="{{config('app.twitter')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 <a href="{{config('app.linkedin')}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                <a href="{{config('app.google')}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -59,13 +57,13 @@
                     <a class="nav-link" href="{{route('site.cursos')}}">Cursos<i aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="{{route('site.professor')}}">Professores<i aria-hidden="true"></i></a>
+                  <a class="nav-link" href="{{route('site.professores')}}">Professores<i aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#">Notícias<i aria-hidden="true"></i></a>
+                  <a class="nav-link" href="{{route('site.noticias')}}">Notícias<i aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('site.contato')}}">Contato</a>
+                    <a class="nav-link" href="{{route('site.contato')}}">Fale conosco</a>
                 </li>
               </ul>
             </div>
@@ -123,7 +121,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright-col text-center">
-                    <p>©2017. Designed by <a href="https://themeforest.net/user/tributetheme" target="_blank">TributeTheme.</a> All Rights Reserved.</p>
+                    <p>©2018. Desenvolvido por <a href="www.fafit.com.br" target="_blank">Fafit.</a> Todos direitos reservados.</p>
                 </div>
             </div>
         </div>

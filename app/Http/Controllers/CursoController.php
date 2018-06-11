@@ -45,9 +45,12 @@ class CursoController extends Controller
 
     public function editar($id){
       $curso = Curso::find($id);
-
       $disciplina  = Disciplina::orderBy('nome','asc')->get();
-      return view('adm.curso.form',compact('curso','disciplina'));
+      $vetDisc = [];
+      foreach($disciplina as $d){
+        $vetDisc[] = $d->id;
+      }
+      return view('adm.curso.form',compact('curso','disciplina','vetDisc'));
     }
 
     public function visualizar($id){

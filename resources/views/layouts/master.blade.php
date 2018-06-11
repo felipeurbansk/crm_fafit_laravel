@@ -75,7 +75,6 @@
            <li><a class="" href="{{route('adm.cpa')}}"><span class="icon-box"><i class="icon-group"></i></span>CPA</a></li>
            <li><a class="" href="{{route('adm.noticia')}}"><span class="icon-box"><i class="icon-bullhorn"></i></span>Notícias</a></li>
            <li><a class="" href="{{route('adm.slide')}}"><span class="icon-box"><i class="icon-camera-retro"></i></span>Slide</a></li>
-           <li><a class="" href="{{route('adm.calendario')}}"><span class="icon-box"><i class="icon-calendar"></i></span>Calendario</a></li>
          </ul>
          <!-- END SIDEBAR MENU -->
       </div>

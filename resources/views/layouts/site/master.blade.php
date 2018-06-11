@@ -70,6 +70,7 @@
           </div>
         </nav>
     </header>
+    
 <!-- Conteudo -->
     @yield('content')
 <!-- Fim Conteudo -->
@@ -78,7 +79,7 @@
 <footer class="main-footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="col-lg-3 col-md-5 col-sm-11">
                 <div class="footer-col">
                     <img class="footer-logo" src="images/logo_fafit_org.png" alt="">
                     <p class="top-para">As Faculdades Integradas de Itararé à FAFIT, projetadas em princípios éticos e humanísticos, têm por missão contribuir na formação integral de cidadãos, por meio da produção e difusão do conhecimento e da cultura, em um contexto de pluralidade.</p>
@@ -86,13 +87,13 @@
             </div>
             <div class="col-lg-2 col-md-6 col-sm-12">
                 <div class="footer-col">
-                    <h3>Links</h3>
+                    <h3>Paginas</h3>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Cursos</a></li>
-                        <li><a href="#">Noticias</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="{{route('site.index')}}">Inicio</a></li>
+                        <li><a href="{{route('site.cursos')}}">Cursos</a></li>
+                        <li><a href="{{route('site.professores')}}">Professores</a></li>
+                        <li><a href="{{route('site.noticias')}}">Noticias</a></li>
+                        <li><a href="{{route('site.contato')}}">Fale conosco</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,9 +103,9 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="footer-col address-col">
                     <h3>Entre em contato</h3>
-                    <p>Caso tenha duvidas entre em contato com a gente ou venha até a nossa instituição conhecê-la melhor e fazer parte desse grupo.</p>
+                    <p>Caso tenha duvidas entre em contato com a gente ou venha até a nossa instituição conhecê-la melhor.</p>
                     <ul>
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{config('app.endereco')}} {{config('app.cidade')}}</li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{config('app.endereco')}}</li>
                         <li><i class="fa fa-envelope" aria-hidden="true"></i>{{config('app.email')}}</li>
                         <li><i class="fa fa-phone" aria-hidden="true"></i> {{config('app.telefone')}}</li>
                     </ul>
@@ -131,6 +132,4 @@
 <a href="#" class="scrollup">
     <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
 </a>
-
-
 @include('layouts.site._include.footer')

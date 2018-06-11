@@ -44,7 +44,21 @@ class DisciplinaController extends Controller
       }
     }
 
+    public function editar($id){
+      $disciplina = Disciplina::find($id);
+      return view('adm.disciplina.form',compact('disciplina'));
+    }
+    
     public function atualizar(DisciplinaRequest $req){
-      
+        DB::beginTransaction();
+        try{
+          $disciplina = Disciplina::find($req->input('id'))->update($req->all());
+          DB::commit();
+          return redirect()->route('adm.disciplina')->with('sucesso','Disciplina atualizada com sucesso!');
+        }catch(Exception $e){
+          DB::rollback();
+          return back()->with('error','Disciplina não foi atualizada com sucesso!');
+        }
+        
     }
 }

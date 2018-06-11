@@ -23,6 +23,7 @@ class NoticiaController extends Controller
 
     public function salvar(Request $req){
       $noticia = $req->all();
+      $noticia['data'] = date('Y-m-d', strtotime($noticia['data']));
       DB::beginTransaction();
       try{
         $noticia = Noticia::create($noticia);
@@ -32,11 +33,11 @@ class NoticiaController extends Controller
         $extension = $req->img->extension();
         $nameFile = "{$name}.{$extension}";
         $upload = $req->img->storeAs('noticias/midias', $nameFile);
-      }
         $midia = new Midia();
         $midia->caminho = "storage/".$upload;
         $midia->noticias_id = $noticia->id;
         $midia->save();
+      }
         DB::commit();
         return redirect()->route('adm.noticia')->with('sucesso','Noticía '.$noticia->titulo.' adicionada ao site');
       }catch(Exception $e){

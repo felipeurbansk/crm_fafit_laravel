@@ -9,7 +9,7 @@
                 <div class="slide-caption">
                     <h2 class="slide-caption__title">{{$s->titulo}}</h2>
                     <p class="slide-caption__desc">{{$s->descricao}}</p>
-                    <a href="{{$s->link}}" class="btn">Leia Mais</a>
+                    <!-- <a href="#" class="btn">Leia Mais</a> -->
                 </div>
                 </li>
             @endforeach
@@ -177,63 +177,15 @@
                                         <li><a href="{{$p->linkedin}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
-                                <a href="teacher-single.html"><i class="fa fa-plus link" aria-hidden="true"></i></a>
+                                <a href="{{route('site.professor',$p->id)}}"><i class="fa fa-plus link" aria-hidden="true"></i></a>
                             </div>
-                            <h4><a href="teacher-single.html">{{$p->nome}}</a></h4>
+                            <h4><a href="{{route('site.professor',$p->id)}}">{{$p->nome}}</a></h4>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
-
-    <!-- Separator Start 
-    <section class="separator-section overlay-black">
-        <div class="container">
-            <div class="row justify-content-center animatedParent animateOnce">
-                <div class="col-lg-5 col-md-5">
-                    <div class="separator-col animated fadeInUpShort slow">
-                        <img src="images/students.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-7">
-                    <div class="separator-col">
-                        <h4>REQUEST for a INFORMATION</h4>
-                        <form> 
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <select class="custom-select">
-                                      <option selected>Select Department</option>
-                                      <option value="1">BBA</option>
-                                      <option value="2">CSE</option>
-                                      <option value="3">English</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="custom-select">
-                                      <option selected>Academic Year</option>
-                                      <option value="1">2017</option>
-                                      <option value="2">2016</option>
-                                      <option value="3">2015</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Your Name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                                <div class="col-md-12">
-                                    <button class="btn btn-default my-btn" type="submit">Submit Request</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    end separator-->
 
     <!-- Blog Start -->
     <section class="blog-section">
@@ -262,11 +214,11 @@
                                 <img src="{{$img->caminho}}" alt="{{$n->titulo}}">
                                 @endforeach
                                 <div class="post-date">
-                                    <h3>28 June, <span>2018</span></h3>
+                                    <h3>{{date('d/m/Y', strtotime($n->data))}}</span></h3>
                                 </div>
                                 <div class="overlay"></div>
                             </div>
-                            <h4><a href="blog-single.html">{{$n->titulo}}</a></h4>
+                            <h4><a href="{{route('site.noticia',$n->id)}}">{{$n->titulo}}</a></h4>
                             <p>{{str_limit($n->corpo,350)}}</p>
                         </div>
                     </div>

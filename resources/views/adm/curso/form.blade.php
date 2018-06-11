@@ -48,11 +48,11 @@
 						</div>
 					</div>
 					<div class="control-group ">
-								<label class="control-label" for="img">Imagem:</label>
-								<div class="controls">
-									<input type="file" class="span5" name="img" value="@isset($curso){{$curso->img}}@else{{old('img')}}@endisset"/>
-									<span class="help-inline"></span>
-								</div>
+						<label class="control-label" for="img">Imagem:</label>
+						<div class="controls">
+							<input type="file" class="span5" name="img" value="@isset($curso){{$curso->img}}@else{{old('img')}}@endisset"/>
+							<span class="help-inline"></span>
+						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">Selecione as disciplinas</label>

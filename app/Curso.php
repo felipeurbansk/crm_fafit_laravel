@@ -17,6 +17,4 @@ class Curso extends Model
       return $this->belongsToMany('App\Disciplina');
     }
 
-
-
 }

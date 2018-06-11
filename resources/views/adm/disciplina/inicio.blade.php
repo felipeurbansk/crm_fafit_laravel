@@ -35,9 +35,6 @@
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 									<ul class="dropdown-menu">
 										<li>
-											<a data-toggle="modal" data-target="#modalDisciplina"><i class="icon-eye-open"></i> Ver cursos</a>
-										</li>
-										<li>
 											<a href="{{route('adm.disciplina.editar',$d->id)}}"><i class="icon-pencil"></i> Editar</a>
 										</li>
 										<li>

@@ -36,16 +36,14 @@
 							<span class="help-inline">{{$errors->first('resumo')}}</span>
 						</div>
 					</div>
-
 					<div class="control-group {{$errors->has('data') ? 'error' : '' }}">
 						<label class="control-label">Data da notícia:</label>
 						<div class="controls">
-							<input class="span2" type="text" data-mask="9999/99/99" name="data" placeholder="yyyy-mm-dd" value="@isset($noticia){{$noticia->data}}@else{{old('data')}}@endisset">
+							<input class="span2" type="text" data-mask="99/99/9999" id="data_noticia" name="data" value="@isset($noticia){{$noticia->data}}@else{{old('data')}}@endisset">
 							<br>
 							<span class="help-inline">{{$errors->first('data')}}</span>
 						</div>
 					</div>
-
 					<div class="control-group {{$errors->has('palavras_chaves') ? 'error' : ''}}">
 						<label class="control-label" for="palavras_chaves">Palavras-chave:</label>
 						<div class="controls">

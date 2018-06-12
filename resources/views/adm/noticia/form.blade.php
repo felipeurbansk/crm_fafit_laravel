@@ -53,7 +53,7 @@
 						</div>
 					</div>
 					<div class="control-group ">
-						<label class="control-label" for="img">Foto(Opcional):</label>
+						<label class="control-label" for="img">Foto:</label>
 						<div class="controls">
 							<input type="file" class="span5" name="img" id="img" value="@isset($noticia){{$noticia->img}}@else{{old('img')}}@endisset"/>
 							<span class="help-inline"></span>

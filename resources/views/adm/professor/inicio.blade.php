@@ -17,11 +17,11 @@
 					<thead>
 						<tr class="table-grey-head">
 							<tr class="table-grey-head">
-								<th width="22%">Nome</th>
+								<th width="12%">Nome</th>
 								<th width="13%">Titulação</th>
-								<th width="12%">Descrição</th>
-								<th width="12%">Cordenador</th>
-								<th width="10%">Ações</th>
+								<th width="15%">Descrição</th>
+								<th width="1%">Cordenador</th>
+								<th width="1%">Ações</th>
 							</tr>
 						</tr>
 					</thead>
@@ -30,7 +30,7 @@
 							@foreach($professor as $p)
 							<td>{{$p->nome}}</td>
 							<td>{{$p->titulacao}}</td>
-							<td>{{str_limit($p->descricao,50)}}</td>
+							<td>{{str_limit($p->descricao,43)}}</td>
 							<td>{{($p->coordenador == 1 ? "Sim" : "Não")}}</td>
 							<td>
 								<div class="btn-group">

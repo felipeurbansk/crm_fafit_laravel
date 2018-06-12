@@ -27,17 +27,17 @@
                         <h5>Missão Institucional</h5>
                         <p class="para-space">As Faculdades Integradas de Itararé, projetadas em princípios éticos e humanísticos, têm por missão contribuir na formação integral de cidadãos, por meio da produção e difusão do conhecimento e da cultura, em um contexto de pluralidade.</p>
                         <div class="about-item">
-                            <i class="icofont icofont-hat"></i>
+                            <i class="icofont icofont-users-social"></i>
                             <h4>Igualdade</h4>
                             <p>Todos os indivíduos são iguais perante a sociedade, com os mesmos direitos e deveres e serão possuidores, com igualdade, ao final de cada curso, do melhor conhecimento, na respectiva especialidade.</p>
                         </div>
                         <div class="about-item">
-                            <i class="icofont icofont-hat"></i>
+                            <i class="icofont icofont-win-trophy"></i>
                             <h4>Qualidade</h4>
                             <p>O ensino e a vivência escolar são conduzidos de modo a criar as melhores e mais apropriadas oportunidades para que os indivíduos se desenvolvam na sua potencialidade, culturalmente, politicamente, socialmente, humanisticamente e profissionalmente.</p>
                         </div>
                         <div class="about-item">
-                            <i class="icofont icofont-hat"></i>
+                            <i class="icofont icofont-group-students"></i>
                             <h4>Democracia</h4>
                             <p>A responsabilidade pelo cumprimento desta missão estáo dividida entre alunos, professores, funcionários, administradores e comunidade, que participando crítica e enfaticamente do processo acadêmico, promovem o exercício da plena cidadania.</p>
                         </div>
@@ -51,21 +51,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Video Start 
-    <section class="video-section parallax overlay-black">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="video-col">
-                        <h2>Our University Campus</h2>
-                        <a class="demo" href="https://youtu.be/OOHxsbhvrUY"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> 
-    End Video Start-->
 
     <!-- Course Start -->
     <section class="course-area">
@@ -161,7 +146,7 @@
                                 <i class="icofont icofont-hat"></i>
                             </div>
                         </div>
-                        <p>Contamos com professores qualificados, aqui estão alguns.</p>
+                        <p>Contamos com professores qualificados, veja todos clicando <a href="{{route('site.professores')}}" >aqui</a>.</p>
                     </div>
                 </div>
             </div>

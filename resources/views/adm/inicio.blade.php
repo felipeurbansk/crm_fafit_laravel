@@ -60,17 +60,6 @@
                             </p>
                         </div>
                   </div>
-                  <div class="span2 responsive clearfix" data-tablet="span3" data-desktop="span2">
-                        <div class="circle-wrap">
-                            <div class="stats-circle purple-color">
-                                <i class="icon-calendar"></i>
-                            </div>
-                            <p>
-                                <strong>5</strong>
-                                Eventos
-                            </p>
-                        </div>
-                  </div>
                </div>
                
              </div>

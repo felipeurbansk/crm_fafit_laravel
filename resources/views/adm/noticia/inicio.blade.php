@@ -15,19 +15,19 @@
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr class="table-grey-head">
-							<th width="22%">Titulo</th>
-							<th width="12%">Resumo</th>
-							<th width="10%">Data</th>
+							<th width="12%">Titulo</th>
+							<th width="20%">Resumo</th>
+							<th width="2%">Data</th>
 							<th width="10%">Palavras-chaves</th>
-							<th width="10%">Ações</th>
+							<th width="1%">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach($noticia as $n)
 						<tr class="odd gradeX">
 							<td>{{$n->titulo}}</td>
-							<td>{{$n->resumo}}</td>
-							<td>{{$n->data}}</td>
+							<td>{{str_limit($n->resumo,105)}}</td>
+							<td>{{date('d/m/Y', strtotime($n->data))}}</td>
 							<td>{{$n->palavras_chaves}}</td>
 							<td>
 								<div class="btn-group">

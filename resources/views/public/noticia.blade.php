@@ -1,7 +1,7 @@
 @extends('layouts.site.master')
 @section('content')
     <!-- Page Title bar -->
-    <section class="defult-page-title overlay-black">
+    <section class="defult-page-title defult-page-title-noticia overlay-black">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="sidebar-post">
                             <div class="sidebar-title">
-                                <h3>Últimas notícias</h3>
+                                <h3>Outras notícias</h3>
                             </div>
                             <ul>
                                 @foreach($noticias as $n)

@@ -1,6 +1,4 @@
-@extends('layouts.master')
 
-@section('content')
 <div class="row-fluid">
     <div class="container offset5">
       <h4>Cadastrar novo administrador</h4>
@@ -94,4 +92,4 @@
     </div>
 
 </div>
-@endsection
+

@@ -53,7 +53,7 @@
 						<div class="controls">
 							<select class="form-control" name="professore_id">
 								@foreach(App\Professore::orderBy('nome','asc')->get() as $p)
-									<option value="{{$p->id}}" @isset($disciplina)$p->id == $disciplina->professor->id ? 'selected' : ''@endisset >{{$p->nome}}</option>
+									<option value="{{$p->id}}" @isset($disciplina){{$p->id == $disciplina->professor->id ? 'selected' : '' }}@endisset >{{$p->nome}}</option>
 								@endforeach
 							</select>
 							<br>

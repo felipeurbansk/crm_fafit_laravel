@@ -15,10 +15,10 @@
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr class="table-grey-head">
-							<th width="22%">Nome</th>
-							<th width="13%">Cargo</th>
+							<th width="6%">Nome</th>
+							<th width="5%">Cargo</th>
 							<th width="12%">Descrição</th>
-							<th width="10%">Ações</th>
+							<th width="1%">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -28,7 +28,7 @@
 								<input type="hidden" name="{{$c->cpa->id}}_id" value="{{$c->cpa->id}}">
 								<td>{{$c->nome}}</td>
 								<td>{{$c->cargos}}</td>
-								<td>{{$c->cpa->descricao}}</td>
+								<td>{{str_limit($c->cpa->descricao,65)}}</td>
 								<td>
 									<div class="btn-group">
 										<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>

@@ -15,22 +15,22 @@
 				<table class="table table-striped table-bordered table-hover ">
 					<thead>
 						<tr class="table-grey-head">
-							<th width="22%">Curso</th>
+							<th width="13%">Curso</th>
 							<th width="22%">Descrição</th>
-							<th width="10%">Duração</th>
-							<th width="10%">Carga Horaria</th>
-							<th width="10%">Ações</th>
+							<th width="1%">Duração</th>
+							<th width="4%">Carga Horaria</th>
+							<th width="1%">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach($curso as $c)
 						<tr class="odd gradeX">
 							<input type="hidden" name="id" value="{{$c->id}}">
-							<td width="22%">{{$c->nome}}</td>
-							<td width="22%">{{str_limit($c->descricao,50)}}</td>
-							<td width="10%">{{$c->duracao}} Anos</td>
-							<td width="10%">{{$c->ch_total}} Horas</td>
-							<td width="10%">
+							<td >{{$c->nome}}</td>
+							<td >{{str_limit($c->descricao,70)}}</td>
+							<td >{{$c->duracao}} Anos</td>
+							<td >{{$c->ch_total}} Horas</td>
+							<td >
 								<div class="btn-group">
 									<a class="btn" href="javascript:;" data-toggle="dropdown"><i class="icon-cog"></i> Ações</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span> </a>
 									<ul class="dropdown-menu">

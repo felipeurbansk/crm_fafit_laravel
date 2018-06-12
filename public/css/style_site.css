@@ -1567,10 +1567,21 @@ textarea {
 .defult-page-title {
     padding: 100px 0;
     text-align: center;
-    background: url(../images/helpdesk.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.defult-page-title-curso{
+    background: url(../images/cursos.jpg);
+}
+.defult-page-title-professores{
+    background: url(../images/professor.jpeg);
+}
+.defult-page-title-noticia{
+    background: url(../images/jornal.jpeg);
+}
+.defult-page-title-faleconosco{
+    background: url(../images/helpdesk.jpg);
 }
 .page-title-box {
     text-align: left;
